@@ -9,4 +9,5 @@
       console.log("Cannot find worker button");
     }
   }
+  window.buyWorker = buyWorker;
 })();
