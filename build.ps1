@@ -1,2 +1,2 @@
 npx esbuild "src\index.ts" --bundle --outfile=script.js --target=es6 --format=iife --global-name=macroCmds
-minify script.js > script.min.js
+cat script.js | npx uglifyjs > script.min.js
