@@ -21,9 +21,12 @@ var macroCmds = (() => {
   // src/index.ts
   var index_exports = {};
   __export(index_exports, {
+    buyAccel: () => buyAccel,
+    buyAccelBoost: () => buyAccelBoost,
     buyAlchemies: () => buyAlchemies,
     buyCoinMint: () => buyCoinMint,
     buyInvestment: () => buyInvestment,
+    buyMult: () => buyMult,
     buyPrinter: () => buyPrinter,
     buyWorker: () => buyWorker
   });
@@ -34,6 +37,9 @@ var macroCmds = (() => {
   var coin3 = document.getElementById("buycoin3");
   var coin4 = document.getElementById("buycoin4");
   var coin5 = document.getElementById("buycoin5");
+  var accelerator = document.getElementById("buyaccelerator");
+  var mult = document.getElementById("buymultiplier");
+  var boost = document.getElementById("buyacceleratorboost");
   function buyWorker() {
     if (coin1) {
       coin1.click();
@@ -67,6 +73,27 @@ var macroCmds = (() => {
       coin5.click();
     } else {
       console.error("Cannot find alchemies button");
+    }
+  }
+  function buyAccel() {
+    if (accelerator) {
+      accelerator.click();
+    } else {
+      console.error("Cannot find acclerator button");
+    }
+  }
+  function buyMult() {
+    if (mult) {
+      mult.click();
+    } else {
+      console.error("Cannot find mult button");
+    }
+  }
+  function buyAccelBoost() {
+    if (boost) {
+      boost.click();
+    } else {
+      console.error("Cannot find accel. boost button");
     }
   }
   return __toCommonJS(index_exports);

@@ -3,6 +3,9 @@ let coin2 = document.getElementById("buycoin2");
 let coin3 = document.getElementById("buycoin3");
 let coin4 = document.getElementById("buycoin4");
 let coin5 = document.getElementById("buycoin5");
+let accelerator = document.getElementById("buyaccelerator");
+let mult = document.getElementById("buymultiplier");
+let boost = document.getElementById("buyacceleratorboost");
 
 export function buyWorker() {
     if (coin1) {
@@ -41,5 +44,29 @@ export function buyAlchemies() {
         coin5.click()
     } else {
         console.error("Cannot find alchemies button");
+    }
+}
+
+export function buyAccel() {
+    if (accelerator) {
+        accelerator.click()
+    } else {
+        console.error("Cannot find acclerator button");
+    }
+}
+
+export function buyMult() {
+    if (mult) {
+        mult.click()
+    } else {
+        console.error("Cannot find mult button");
+    }
+}
+
+export function buyAccelBoost() {
+    if (boost) {
+        boost.click()
+    } else {
+        console.error("Cannot find accel. boost button");
     }
 }
