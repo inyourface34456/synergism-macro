@@ -1,5 +1,9 @@
 let coin1 = document.getElementById("buycoin1");
 
 export function buyWorker() {
-    coin1.click()
+    if (coin1) {
+        coin1.click()
+    } else {
+        console.log("Cannot find worker button");
+    }
 }

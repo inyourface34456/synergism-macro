@@ -1,10 +1,15 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "target": "es2019",
-        "declaration": true,
-        "outDir": "./dist"
-    },
+        "target": "ES5",                    // Good for broad browser compatibility
+        "module": "CommonJS",              // Use CommonJS to enable `require()`
+        "outDir": "./dist",                // Output folder
+        "rootDir": "./src",                // Your source folder
+        "esModuleInterop": true,           // Allows `import foo from 'foo'` for CommonJS
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "noImplicitAny": true,
+        "skipLibCheck": true
+      },
     "include": [
         "src/**/*"
     ]
