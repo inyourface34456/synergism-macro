@@ -28,7 +28,15 @@ var macroCmds = (() => {
     buyInvestment: () => buyInvestment,
     buyMult: () => buyMult,
     buyPrinter: () => buyPrinter,
-    buyWorker: () => buyWorker
+    buyWorker: () => buyWorker,
+    toggleAutobuyAccel: () => toggleAutobuyAccel,
+    toggleAutobuyAccelBoost: () => toggleAutobuyAccelBoost,
+    toggleAutobuyAlchemies: () => toggleAutobuyAlchemies,
+    toggleAutobuyCoinMint: () => toggleAutobuyCoinMint,
+    toggleAutobuyInvestment: () => toggleAutobuyInvestment,
+    toggleAutobuyMult: () => toggleAutobuyMult,
+    toggleAutobuyPrinter: () => toggleAutobuyPrinter,
+    toggleAutobuyWorker: () => toggleAutobuyWorker
   });
 
   // src/coin.ts
@@ -40,6 +48,14 @@ var macroCmds = (() => {
   var accelerator = document.getElementById("buyaccelerator");
   var mult = document.getElementById("buymultiplier");
   var boost = document.getElementById("buyacceleratorboost");
+  var coin1autobuy = document.getElementById("toggle1");
+  var coin2autobuy = document.getElementById("toggle2");
+  var coin3autobuy = document.getElementById("toggle3");
+  var coin4autobuy = document.getElementById("toggle4");
+  var coin5autobuy = document.getElementById("toggle5");
+  var accelautobuy = document.getElementById("toggle3");
+  var multautobuy = document.getElementById("toggle4");
+  var acelboostautobuy = document.getElementById("toggle5");
   function buyWorker() {
     if (coin1) {
       coin1.click();
@@ -94,6 +110,62 @@ var macroCmds = (() => {
       boost.click();
     } else {
       console.error("Cannot find accel. boost button");
+    }
+  }
+  function toggleAutobuyWorker() {
+    if (coin1autobuy) {
+      coin1autobuy.click();
+    } else {
+      console.error("Cannot find auto worker button");
+    }
+  }
+  function toggleAutobuyInvestment() {
+    if (coin2autobuy) {
+      coin2autobuy.click();
+    } else {
+      console.error("Cannot find auto investment button");
+    }
+  }
+  function toggleAutobuyPrinter() {
+    if (coin3autobuy) {
+      coin3autobuy.click();
+    } else {
+      console.error("Cannot find auto printer button");
+    }
+  }
+  function toggleAutobuyCoinMint() {
+    if (coin4autobuy) {
+      coin4autobuy.click();
+    } else {
+      console.error("Cannot find auto coin mint button");
+    }
+  }
+  function toggleAutobuyAlchemies() {
+    if (coin5autobuy) {
+      coin5autobuy.click();
+    } else {
+      console.error("Cannot find auto alchemies button");
+    }
+  }
+  function toggleAutobuyAccel() {
+    if (accelautobuy) {
+      accelautobuy.click();
+    } else {
+      console.error("Cannot find auto printer button");
+    }
+  }
+  function toggleAutobuyMult() {
+    if (multautobuy) {
+      multautobuy.click();
+    } else {
+      console.error("Cannot find auto coin mint button");
+    }
+  }
+  function toggleAutobuyAccelBoost() {
+    if (acelboostautobuy) {
+      acelboostautobuy.click();
+    } else {
+      console.error("Cannot find auto alchemies button");
     }
   }
   return __toCommonJS(index_exports);
