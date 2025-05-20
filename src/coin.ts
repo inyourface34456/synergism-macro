@@ -7,5 +7,3 @@ export function buyWorker() {
         console.log("Cannot find worker button");
     }
 }
-
-(window as any).buyWorker = buyWorker;
