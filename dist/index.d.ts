@@ -1,0 +1,1 @@
+export { buyWorker } from './coin';
