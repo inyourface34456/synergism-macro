@@ -21,16 +21,52 @@ var macroCmds = (() => {
   // src/index.ts
   var index_exports = {};
   __export(index_exports, {
+    buyAlchemies: () => buyAlchemies,
+    buyCoinMint: () => buyCoinMint,
+    buyInvestment: () => buyInvestment,
+    buyPrinter: () => buyPrinter,
     buyWorker: () => buyWorker
   });
 
   // src/coin.ts
   var coin1 = document.getElementById("buycoin1");
+  var coin2 = document.getElementById("buycoin2");
+  var coin3 = document.getElementById("buycoin3");
+  var coin4 = document.getElementById("buycoin4");
+  var coin5 = document.getElementById("buycoin5");
   function buyWorker() {
     if (coin1) {
       coin1.click();
     } else {
-      console.log("Cannot find worker button");
+      console.error("Cannot find worker button");
+    }
+  }
+  function buyInvestment() {
+    if (coin2) {
+      coin2.click();
+    } else {
+      console.error("Cannot find investment button");
+    }
+  }
+  function buyPrinter() {
+    if (coin3) {
+      coin3.click();
+    } else {
+      console.error("Cannot find printer button");
+    }
+  }
+  function buyCoinMint() {
+    if (coin4) {
+      coin4.click();
+    } else {
+      console.error("Cannot find coin mint button");
+    }
+  }
+  function buyAlchemies() {
+    if (coin5) {
+      coin5.click();
+    } else {
+      console.error("Cannot find alchemies button");
     }
   }
   return __toCommonJS(index_exports);

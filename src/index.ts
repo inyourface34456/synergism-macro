@@ -1,1 +1,1 @@
-export {buyWorker} from './coin'
+export {buyWorker, buyAlchemies, buyCoinMint, buyInvestment, buyPrinter} from './coin'

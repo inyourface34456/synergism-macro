@@ -1,9 +1,45 @@
 let coin1 = document.getElementById("buycoin1");
+let coin2 = document.getElementById("buycoin2");
+let coin3 = document.getElementById("buycoin3");
+let coin4 = document.getElementById("buycoin4");
+let coin5 = document.getElementById("buycoin5");
 
 export function buyWorker() {
     if (coin1) {
         coin1.click()
     } else {
-        console.log("Cannot find worker button");
+        console.error("Cannot find worker button");
+    }
+}
+
+export function buyInvestment() {
+    if (coin2) {
+        coin2.click()
+    } else {
+        console.error("Cannot find investment button");
+    }
+}
+
+export function buyPrinter() {
+    if (coin3) {
+        coin3.click()
+    } else {
+        console.error("Cannot find printer button");
+    }
+}
+
+export function buyCoinMint() {
+    if (coin4) {
+        coin4.click()
+    } else {
+        console.error("Cannot find coin mint button");
+    }
+}
+
+export function buyAlchemies() {
+    if (coin5) {
+        coin5.click()
+    } else {
+        console.error("Cannot find alchemies button");
     }
 }

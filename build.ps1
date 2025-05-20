@@ -1,1 +1,2 @@
-npx esbuild "src\index.ts" --bundle --outfile=script.user.js --target=es6 --format=iife --global-name=macroCmds
+npx esbuild "src\index.ts" --bundle --outfile=script.js --target=es6 --format=iife --global-name=macroCmds
+minify script.js > script.min.js
