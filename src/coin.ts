@@ -1,144 +1,88 @@
-let coin1 = document.getElementById("buycoin1");
-let coin2 = document.getElementById("buycoin2");
-let coin3 = document.getElementById("buycoin3");
-let coin4 = document.getElementById("buycoin4");
-let coin5 = document.getElementById("buycoin5");
-let accelerator = document.getElementById("buyaccelerator");
-let mult = document.getElementById("buymultiplier");
-let boost = document.getElementById("buyacceleratorboost");
-let coin1autobuy = document.getElementById("toggle1");
-let coin2autobuy = document.getElementById("toggle2");
-let coin3autobuy = document.getElementById("toggle3");
-let coin4autobuy = document.getElementById("toggle4");
-let coin5autobuy = document.getElementById("toggle5");
-let accelautobuy = document.getElementById("toggle3");
-let multautobuy = document.getElementById("toggle4");
-let acelboostautobuy = document.getElementById("toggle5");
+import {makeClicker} from "./utils"
 
-export function buyWorker() {
-    if (coin1) {
-        coin1.click()
-    } else {
-        console.error("Cannot find worker button");
-    }
-}
+export type buyQuant = "coinone" |"cointen" | "coinhundred" | "cointhousand" | "coin10k" | "coin100k";
 
-export function buyInvestment() {
-    if (coin2) {
-        coin2.click()
-    } else {
-        console.error("Cannot find investment button");
-    }
-}
+export let buyWorker = makeClicker("buycoin1", "Worker");
+export let buyInvestment = makeClicker("buycoin2", "Investment");
+export let buyPrinter = makeClicker("buycoin3", "Printer");
+export let buyCoinMint = makeClicker("buycoin4", "Coin Mint");
+export let buyAlchemies = makeClicker("buycoin5", "Alchemy");
+export let buyAccel = makeClicker("buyaccelerator", "Accelorator");
+export let buyMult = makeClicker("buymultiplier", "Multplier");
+export let buyAccelBoost = makeClicker("buyacceleratorboost", "Accel. Boost");
+export let toggleAutobuyWorker = makeClicker("toggle1", "Auto Worker");
+export let toggleAutobuyInvestment = makeClicker("toggle2", "Auto Investment");
+export let toggleAutobuyPrinter = makeClicker("toggle3", "Auto Printer");
+export let toggleAutobuyCoinMint = makeClicker("toggle4", "Auto Coin Mint");
+export let toggleAutobuyAlchemies = makeClicker("toggle5", "Auto Alchemy");
+export let toggleAutobuyAccel = makeClicker("toggle6", "Auto Accelorator");
+export let toggleAutobuyMult = makeClicker("toggle7", "Auto Multplier");
+export let toggleAutobuyAccelBoost = makeClicker("toggle8", "Auto Accel. Boost");
 
-export function buyPrinter() {
-    if (coin3) {
-        coin3.click()
-    } else {
-        console.error("Cannot find printer button");
-    }
-}
+export function setCoinBuyQuant(quant: buyQuant) {
+    switch (quant) {
+        case "coinone":
+            var but = document.getElementById(quant);
+            
+            if (but) {
+                but.click()
+            } else {
+                console.error(`could not find Quanity selector`)
+            }
 
-export function buyCoinMint() {
-    if (coin4) {
-        coin4.click()
-    } else {
-        console.error("Cannot find coin mint button");
-    }
-}
-
-export function buyAlchemies() {
-    if (coin5) {
-        coin5.click()
-    } else {
-        console.error("Cannot find alchemies button");
-    }
-}
-
-export function buyAccel() {
-    if (accelerator) {
-        accelerator.click()
-    } else {
-        console.error("Cannot find acclerator button");
-    }
-}
-
-export function buyMult() {
-    if (mult) {
-        mult.click()
-    } else {
-        console.error("Cannot find mult button");
-    }
-}
-
-export function buyAccelBoost() {
-    if (boost) {
-        boost.click()
-    } else {
-        console.error("Cannot find accel. boost button");
-    }
-}
-
-export function toggleAutobuyWorker() {
-    if (coin1autobuy) {
-        coin1autobuy.click()
-    } else {
-        console.error("Cannot find auto worker button");
-    }
-}
-
-export function toggleAutobuyInvestment() {
-    if (coin2autobuy) {
-        coin2autobuy.click()
-    } else {
-        console.error("Cannot find auto investment button");
-    }
-}
-
-export function toggleAutobuyPrinter() {
-    if (coin3autobuy) {
-        coin3autobuy.click()
-    } else {
-        console.error("Cannot find auto printer button");
-    }
-}
-
-export function toggleAutobuyCoinMint() {
-    if (coin4autobuy) {
-        coin4autobuy.click()
-    } else {
-        console.error("Cannot find auto coin mint button");
-    }
-}
-
-export function toggleAutobuyAlchemies() {
-    if (coin5autobuy) {
-        coin5autobuy.click()
-    } else {
-        console.error("Cannot find auto alchemies button");
-    }
-}
-
-export function toggleAutobuyAccel() {
-    if (accelautobuy) {
-        accelautobuy.click()
-    } else {
-        console.error("Cannot find auto printer button");
-    }
-}
-
-export function toggleAutobuyMult() {
-    if (multautobuy) {
-        multautobuy.click()
-    } else {
-        console.error("Cannot find auto coin mint button");
-    }
-}
-
-export function toggleAutobuyAccelBoost() {
-    if (acelboostautobuy) {
-        acelboostautobuy.click()
-    } else {
-        console.error("Cannot find auto alchemies button");
+            return;
+        case "cointen":
+            var but = document.getElementById(quant);
+            
+            if (but) {
+                but.click()
+            } else {
+                console.error(`could not find Quanity selector`)
+            }
+            
+            return;
+        case "coinhundred":
+            var but = document.getElementById(quant);
+            
+            if (but) {
+                but.click()
+            } else {
+                console.error(`could not find Quanity selector`)
+            }
+            
+            return;
+        case "cointhousand":
+            var but = document.getElementById(quant);
+            
+            if (but) {
+                but.click()
+            } else {
+                console.error(`could not find Quanity selector`)
+            }
+            
+            return;
+        case "coin10k":
+            var but = document.getElementById(quant);
+            
+            if (but) {
+                but.click()
+            } else {
+                console.error(`could not find Quanity selector`)
+            }
+            
+            return;
+        case "coin100k":
+            var but = document.getElementById(quant);
+            
+            if (but) {
+                but.click()
+            } else {
+                console.error(`could not find Quanity selector`)
+            }
+            
+            return;
+        default:
+            console.error("invalid input")
+            return;
     }
 }
