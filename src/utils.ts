@@ -17,3 +17,12 @@ export let coinBuyQuant = {
     tenk: "coin10k",
     hunderedk: "coin100k"
 };
+
+export let diamondBuyQuant = {
+    one: "crystalone",
+    ten: "crystalten",
+    hundered: "crystalhundred",
+    onek: "crystalthousand",
+    tenk: "crystal10k",
+    hunderedk: "crystal100k"
+};

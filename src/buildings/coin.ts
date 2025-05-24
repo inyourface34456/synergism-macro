@@ -1,6 +1,6 @@
-import {makeClicker} from "./utils"
+import {makeClicker} from "../utils"
 
-export type buyQuant = "coinone" |"cointen" | "coinhundred" | "cointhousand" | "coin10k" | "coin100k";
+type buyCoinQuant = "coinone" |"cointen" | "coinhundred" | "cointhousand" | "coin10k" | "coin100k";
 
 export let buyWorker = makeClicker("buycoin1", "Worker");
 export let buyInvestment = makeClicker("buycoin2", "Investment");
@@ -19,7 +19,7 @@ export let toggleAutobuyAccel = makeClicker("toggle6", "Auto Accelorator");
 export let toggleAutobuyMult = makeClicker("toggle7", "Auto Multplier");
 export let toggleAutobuyAccelBoost = makeClicker("toggle8", "Auto Accel. Boost");
 
-export function setCoinBuyQuant(quant: buyQuant) {
+export function setCoinBuyQuant(quant: buyCoinQuant) {
     switch (quant) {
         case "coinone":
             var but = document.getElementById(quant);

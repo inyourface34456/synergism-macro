@@ -24,20 +24,32 @@ var macroCmds = (() => {
     buyAccel: () => buyAccel,
     buyAccelBoost: () => buyAccelBoost,
     buyAlchemies: () => buyAlchemies,
+    buyCoalPlant: () => buyCoalPlant,
+    buyCoalRig: () => buyCoalRig,
     buyCoinMint: () => buyCoinMint,
     buyInvestment: () => buyInvestment,
     buyMult: () => buyMult,
+    buyPandorasBoxe: () => buyPandorasBoxe,
+    buyPikaxe: () => buyPikaxe,
     buyPrinter: () => buyPrinter,
+    buyRefinery: () => buyRefinery,
     buyWorker: () => buyWorker,
     coinBuyQuant: () => coinBuyQuant,
+    diamondBuyQuant: () => diamondBuyQuant,
     setCoinBuyQuant: () => setCoinBuyQuant,
+    setDiamondBuyQuant: () => setDiamondBuyQuant,
     toggleAutobuyAccel: () => toggleAutobuyAccel,
     toggleAutobuyAccelBoost: () => toggleAutobuyAccelBoost,
     toggleAutobuyAlchemies: () => toggleAutobuyAlchemies,
+    toggleAutobuyCoalPlant: () => toggleAutobuyCoalPlant,
+    toggleAutobuyCoalRig: () => toggleAutobuyCoalRig,
     toggleAutobuyCoinMint: () => toggleAutobuyCoinMint,
     toggleAutobuyInvestment: () => toggleAutobuyInvestment,
     toggleAutobuyMult: () => toggleAutobuyMult,
+    toggleAutobuyPandoraBox: () => toggleAutobuyPandoraBox,
+    toggleAutobuyPickaxe: () => toggleAutobuyPickaxe,
     toggleAutobuyPrinter: () => toggleAutobuyPrinter,
+    toggleAutobuyRefinery: () => toggleAutobuyRefinery,
     toggleAutobuyWorker: () => toggleAutobuyWorker
   });
 
@@ -60,8 +72,16 @@ var macroCmds = (() => {
     tenk: "coin10k",
     hunderedk: "coin100k"
   };
+  var diamondBuyQuant = {
+    one: "crystalone",
+    ten: "crystalten",
+    hundered: "crystalhundred",
+    onek: "crystalthousand",
+    tenk: "crystal10k",
+    hunderedk: "crystal100k"
+  };
 
-  // src/coin.ts
+  // src/buildings/coin.ts
   var buyWorker = makeClicker("buycoin1", "Worker");
   var buyInvestment = makeClicker("buycoin2", "Investment");
   var buyPrinter = makeClicker("buycoin3", "Printer");
@@ -121,6 +141,73 @@ var macroCmds = (() => {
         }
         return;
       case "coin100k":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      default:
+        console.error("invalid input");
+        return;
+    }
+  }
+
+  // src/buildings/diamond.ts
+  var buyRefinery = makeClicker("buydiamond1", "Refineries");
+  var buyCoalPlant = makeClicker("buydiamond2", "Coal Plant");
+  var buyCoalRig = makeClicker("buydiamond3", "Coal Rig");
+  var buyPikaxe = makeClicker("buydiamond4", "Pikaxe");
+  var buyPandorasBoxe = makeClicker("buydiamond5", "Pandoras Box");
+  var toggleAutobuyRefinery = makeClicker("toggle10", "Auto Refineries");
+  var toggleAutobuyCoalPlant = makeClicker("toggle11", "Auto Coal Plant");
+  var toggleAutobuyCoalRig = makeClicker("toggle12", "Auto Coal Rig");
+  var toggleAutobuyPickaxe = makeClicker("toggle13", "Auto Pikaxe");
+  var toggleAutobuyPandoraBox = makeClicker("toggle14", "Auto Pandoras Boxes");
+  function setDiamondBuyQuant(quant) {
+    switch (quant) {
+      case "crystalone":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "crystalten":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "crystalhundred":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "crystalthousand":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "crystal10k":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "crystal100k":
         var but = document.getElementById(quant);
         if (but) {
           but.click();
