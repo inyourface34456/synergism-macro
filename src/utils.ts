@@ -9,6 +9,32 @@ export function makeClicker(id: string, disId: string) {
   };
 }
 
+export function checkClassList(id: string, className: string) {
+  let element = document.getElementById(id);
+  if (!element) {
+    console.error(`cannot find the element ${id}`);
+    return 0;
+  } else if (element && element.classList.contains(className)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+export function makeCheckIfAvalible(id: string) {
+  return function () {
+    let res = checkClassList(id, "buildingPurchaseBtnAvailable");
+
+    if (res === 0) {
+      return 0;
+    } else if (res) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
 export let coinBuyQuant = {
     one: "coinone",
     ten: "cointen",

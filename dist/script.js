@@ -27,15 +27,33 @@ var macroCmds = (() => {
     buyCoalPlant: () => buyCoalPlant,
     buyCoalRig: () => buyCoalRig,
     buyCoinMint: () => buyCoinMint,
+    buyDiamondUpgrade1: () => buyDiamondUpgrade1,
+    buyDiamondUpgrade2: () => buyDiamondUpgrade2,
+    buyDiamondUpgrade3: () => buyDiamondUpgrade3,
+    buyDiamondUpgrade4: () => buyDiamondUpgrade4,
+    buyDiamondUpgrade5: () => buyDiamondUpgrade5,
     buyInvestment: () => buyInvestment,
     buyMult: () => buyMult,
-    buyPandorasBoxe: () => buyPandorasBoxe,
+    buyPandorasBox: () => buyPandorasBox,
     buyPikaxe: () => buyPikaxe,
     buyPrinter: () => buyPrinter,
     buyRefinery: () => buyRefinery,
     buyWorker: () => buyWorker,
     coinBuyQuant: () => coinBuyQuant,
     diamondBuyQuant: () => diamondBuyQuant,
+    isAccelBoostBuyable: () => isAccelBoostBuyable,
+    isAccelBuyable: () => isAccelBuyable,
+    isAlchemiesBuyable: () => isAlchemiesBuyable,
+    isCoalPlantBuyable: () => isCoalPlantBuyable,
+    isCoalRigBuyable: () => isCoalRigBuyable,
+    isCoinMintBuyable: () => isCoinMintBuyable,
+    isInvestmentBuyable: () => isInvestmentBuyable,
+    isMultBuyable: () => isMultBuyable,
+    isPandorasBoxBuyable: () => isPandorasBoxBuyable,
+    isPikaxeBuyable: () => isPikaxeBuyable,
+    isPrinterBuyable: () => isPrinterBuyable,
+    isRefineryBuyable: () => isRefineryBuyable,
+    isWorkerBuyable: () => isWorkerBuyable,
     setCoinBuyQuant: () => setCoinBuyQuant,
     setDiamondBuyQuant: () => setDiamondBuyQuant,
     toggleAutobuyAccel: () => toggleAutobuyAccel,
@@ -64,6 +82,29 @@ var macroCmds = (() => {
       }
     };
   }
+  function checkClassList(id, className) {
+    let element = document.getElementById(id);
+    if (!element) {
+      console.error(`cannot find the element ${id}`);
+      return 0;
+    } else if (element && element.classList.contains(className)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  function makeCheckIfAvalible(id) {
+    return function() {
+      let res = checkClassList(id, "buildingPurchaseBtnAvailable");
+      if (res === 0) {
+        return 0;
+      } else if (res) {
+        return true;
+      } else {
+        return false;
+      }
+    };
+  }
   var coinBuyQuant = {
     one: "coinone",
     ten: "cointen",
@@ -82,14 +123,30 @@ var macroCmds = (() => {
   };
 
   // src/buildings/coin.ts
-  var buyWorker = makeClicker("buycoin1", "Worker");
-  var buyInvestment = makeClicker("buycoin2", "Investment");
-  var buyPrinter = makeClicker("buycoin3", "Printer");
-  var buyCoinMint = makeClicker("buycoin4", "Coin Mint");
-  var buyAlchemies = makeClicker("buycoin5", "Alchemy");
-  var buyAccel = makeClicker("buyaccelerator", "Accelorator");
-  var buyMult = makeClicker("buymultiplier", "Multplier");
-  var buyAccelBoost = makeClicker("buyacceleratorboost", "Accel. Boost");
+  var workerId = "buycoin1";
+  var investmentId = "buycoin2";
+  var printerId = "buycoin3";
+  var coinMintId = "buycoin4";
+  var alchemiesId = "buycoin5";
+  var accelId = "buyaccelerator";
+  var multId = "buymultiplier";
+  var accelBoostId = "buyacceleratorboost";
+  var buyWorker = makeClicker(workerId, "Worker");
+  var buyInvestment = makeClicker(investmentId, "Investment");
+  var buyPrinter = makeClicker(printerId, "Printer");
+  var buyCoinMint = makeClicker(coinMintId, "Coin Mint");
+  var buyAlchemies = makeClicker(alchemiesId, "Alchemy");
+  var buyAccel = makeClicker(accelId, "Accelorator");
+  var buyMult = makeClicker(multId, "Multplier");
+  var buyAccelBoost = makeClicker(accelBoostId, "Accel. Boost");
+  var isWorkerBuyable = makeCheckIfAvalible(workerId);
+  var isInvestmentBuyable = makeCheckIfAvalible(investmentId);
+  var isPrinterBuyable = makeCheckIfAvalible(printerId);
+  var isCoinMintBuyable = makeCheckIfAvalible(coinMintId);
+  var isAlchemiesBuyable = makeCheckIfAvalible(alchemiesId);
+  var isAccelBuyable = makeCheckIfAvalible(accelId);
+  var isMultBuyable = makeCheckIfAvalible(multId);
+  var isAccelBoostBuyable = makeClicker(accelBoostId, "Accel. Boost");
   var toggleAutobuyWorker = makeClicker("toggle1", "Auto Worker");
   var toggleAutobuyInvestment = makeClicker("toggle2", "Auto Investment");
   var toggleAutobuyPrinter = makeClicker("toggle3", "Auto Printer");
@@ -159,7 +216,17 @@ var macroCmds = (() => {
   var buyCoalPlant = makeClicker("buydiamond2", "Coal Plant");
   var buyCoalRig = makeClicker("buydiamond3", "Coal Rig");
   var buyPikaxe = makeClicker("buydiamond4", "Pikaxe");
-  var buyPandorasBoxe = makeClicker("buydiamond5", "Pandoras Box");
+  var buyPandorasBox = makeClicker("buydiamond5", "Pandoras Box");
+  var isRefineryBuyable = makeCheckIfAvalible("buydiamond1");
+  var isCoalPlantBuyable = makeCheckIfAvalible("buydiamond2");
+  var isCoalRigBuyable = makeCheckIfAvalible("buydiamond3");
+  var isPikaxeBuyable = makeCheckIfAvalible("buydiamond4");
+  var isPandorasBoxBuyable = makeCheckIfAvalible("buydiamond5");
+  var buyDiamondUpgrade1 = makeClicker("buycrystalupgrade1", "Diamond Upgrade 1");
+  var buyDiamondUpgrade2 = makeClicker("buycrystalupgrade2", "Diamond Upgrade 2");
+  var buyDiamondUpgrade3 = makeClicker("buycrystalupgrade3", "Diamond Upgrade 3");
+  var buyDiamondUpgrade4 = makeClicker("buycrystalupgrade4", "Diamond Upgrade 4");
+  var buyDiamondUpgrade5 = makeClicker("buycrystalupgrade5", "Diamond Upgrade 5");
   var toggleAutobuyRefinery = makeClicker("toggle10", "Auto Refineries");
   var toggleAutobuyCoalPlant = makeClicker("toggle11", "Auto Coal Plant");
   var toggleAutobuyCoalRig = makeClicker("toggle12", "Auto Coal Rig");
