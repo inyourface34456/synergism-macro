@@ -24,6 +24,7 @@ var macroCmds = (() => {
     buyAccel: () => buyAccel,
     buyAccelBoost: () => buyAccelBoost,
     buyAlchemies: () => buyAlchemies,
+    buyAugments: () => buyAugments,
     buyCoalPlant: () => buyCoalPlant,
     buyCoalRig: () => buyCoalRig,
     buyCoinMint: () => buyCoinMint,
@@ -32,47 +33,68 @@ var macroCmds = (() => {
     buyDiamondUpgrade3: () => buyDiamondUpgrade3,
     buyDiamondUpgrade4: () => buyDiamondUpgrade4,
     buyDiamondUpgrade5: () => buyDiamondUpgrade5,
+    buyEnchantments: () => buyEnchantments,
+    buyGrandmasters: () => buyGrandmasters,
     buyInvestment: () => buyInvestment,
     buyMult: () => buyMult,
+    buyOracles: () => buyOracles,
     buyPandorasBox: () => buyPandorasBox,
     buyPikaxe: () => buyPikaxe,
     buyPrinter: () => buyPrinter,
     buyRefinery: () => buyRefinery,
+    buyWizards: () => buyWizards,
     buyWorker: () => buyWorker,
     coinBuyQuant: () => coinBuyQuant,
     diamondBuyQuant: () => diamondBuyQuant,
     getAutoPrestigeMode: () => getAutoPrestigeMode,
+    getAutoTranscendMode: () => getAutoTranscendMode,
     isAccelBoostBuyable: () => isAccelBoostBuyable,
     isAccelBuyable: () => isAccelBuyable,
     isAlchemiesBuyable: () => isAlchemiesBuyable,
+    isAugmentsBuyable: () => isAugmentsBuyable,
     isAutoPrestigeEnabled: () => isAutoPrestigeEnabled,
+    isAutoTranscendEnabled: () => isAutoTranscendEnabled,
     isCoalPlantBuyable: () => isCoalPlantBuyable,
     isCoalRigBuyable: () => isCoalRigBuyable,
     isCoinMintBuyable: () => isCoinMintBuyable,
+    isEnchantmentsBuyable: () => isEnchantmentsBuyable,
+    isGrandmastersBuyable: () => isGrandmastersBuyable,
     isInvestmentBuyable: () => isInvestmentBuyable,
     isMultBuyable: () => isMultBuyable,
+    isOraclesBuyable: () => isOraclesBuyable,
     isPandorasBoxBuyable: () => isPandorasBoxBuyable,
     isPikaxeBuyable: () => isPikaxeBuyable,
     isPrinterBuyable: () => isPrinterBuyable,
     isRefineryBuyable: () => isRefineryBuyable,
+    isWizardsBuyable: () => isWizardsBuyable,
     isWorkerBuyable: () => isWorkerBuyable,
+    mythosBuyQuant: () => mythosBuyQuant,
     setAutoPrestige: () => setAutoPrestige,
+    setAutoTranscend: () => setAutoTranscend,
     setCoinBuyQuant: () => setCoinBuyQuant,
     setDiamondBuyQuant: () => setDiamondBuyQuant,
+    setMythosBuyQuant: () => setMythosBuyQuant,
+    togglAutobuyeOracles: () => togglAutobuyeOracles,
     toggleAutoPrestige: () => toggleAutoPrestige,
     toggleAutoPrestigeMode: () => toggleAutoPrestigeMode,
+    toggleAutoTranscend: () => toggleAutoTranscend,
+    toggleAutoTranscendeMode: () => toggleAutoTranscendeMode,
     toggleAutobuyAccel: () => toggleAutobuyAccel,
     toggleAutobuyAccelBoost: () => toggleAutobuyAccelBoost,
     toggleAutobuyAlchemies: () => toggleAutobuyAlchemies,
+    toggleAutobuyAugments: () => toggleAutobuyAugments,
     toggleAutobuyCoalPlant: () => toggleAutobuyCoalPlant,
     toggleAutobuyCoalRig: () => toggleAutobuyCoalRig,
     toggleAutobuyCoinMint: () => toggleAutobuyCoinMint,
+    toggleAutobuyEnchantments: () => toggleAutobuyEnchantments,
+    toggleAutobuyGrandmasters: () => toggleAutobuyGrandmasters,
     toggleAutobuyInvestment: () => toggleAutobuyInvestment,
     toggleAutobuyMult: () => toggleAutobuyMult,
     toggleAutobuyPandoraBox: () => toggleAutobuyPandoraBox,
     toggleAutobuyPickaxe: () => toggleAutobuyPickaxe,
     toggleAutobuyPrinter: () => toggleAutobuyPrinter,
     toggleAutobuyRefinery: () => toggleAutobuyRefinery,
+    toggleAutobuyWizards: () => toggleAutobuyWizards,
     toggleAutobuyWorker: () => toggleAutobuyWorker
   });
 
@@ -135,6 +157,14 @@ var macroCmds = (() => {
     onek: "crystalthousand",
     tenk: "crystal10k",
     hunderedk: "crystal100k"
+  };
+  var mythosBuyQuant = {
+    one: "mythosone",
+    ten: "mythosten",
+    hundered: "mythoshundred",
+    onek: "mythosthousand",
+    tenk: "mythos10k",
+    hunderedk: "mythos100k"
   };
 
   // src/buildings/coin.ts
@@ -315,6 +345,103 @@ var macroCmds = (() => {
         }
         return;
       case "crystal100k":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      default:
+        console.error("invalid input");
+        return;
+    }
+  }
+
+  // src/buildings/mythos.ts
+  var buyAugments = makeClicker("buymythos1", "Augments");
+  var isAugmentsBuyable = makeCheckIfAvalible("buymythos1");
+  var toggleAutobuyAugments = makeClicker("toggle16", "Augments Auto Buy");
+  var buyEnchantments = makeClicker("buymythos2", "Enchantments");
+  var isEnchantmentsBuyable = makeCheckIfAvalible("buymythos2");
+  var toggleAutobuyEnchantments = makeClicker("toggle17", "Enchantmants Auto Buy");
+  var buyWizards = makeClicker("buymythos3", "Wizards");
+  var isWizardsBuyable = makeCheckIfAvalible("buymythos3");
+  var toggleAutobuyWizards = makeClicker("toggle18", "Wizards Auto Buy");
+  var buyOracles = makeClicker("buymythos4", "Oracles");
+  var isOraclesBuyable = makeCheckIfAvalible("buymythos4");
+  var togglAutobuyeOracles = makeClicker("toggle19", "Oracles Auto Buy");
+  var buyGrandmasters = makeClicker("buymythos5", "Grandmasters");
+  var isGrandmastersBuyable = makeCheckIfAvalible("buymythos5");
+  var toggleAutobuyGrandmasters = makeClicker("toggle20", "Grandmasters Auto Buy");
+  var setAutoTranscend = makeSetAuto("transcendamount", "Auto Transcend");
+  var toggleAutoTranscend = makeClicker("toggle21pp", "Toggle Auto Transcend");
+  var toggleAutoTranscendeMode = makeClicker("transcendautotoggle", "Auto Transcend Mode Toggle");
+  function isAutoTranscendEnabled() {
+    let elm = document.getElementById("toggle20");
+    if (elm && elm.style.borderColor === "red") {
+      return false;
+    } else if (elm && elm.style.borderColor === "green") {
+      return true;
+    } else {
+      console.error("Cannont find auto Transcend button");
+      return 0;
+    }
+  }
+  function getAutoTranscendMode() {
+    let elm = document.getElementById("transcendautotoggle");
+    if (elm && elm.innerText === "Mode: AMOUNT") {
+      return "amount";
+    } else if (elm && elm.innerText === "Mode: TIME") {
+      return "time";
+    } else {
+      console.error(`Either cannot reconzie the text, or cannot find the element.  Element obj: ${elm}`);
+      return 0;
+    }
+  }
+  function setMythosBuyQuant(quant) {
+    switch (quant) {
+      case "mythosone":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "mythosten":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "mythoshundred":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "mythosthousand":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "mythos10k":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "mythos100k":
         var but = document.getElementById(quant);
         if (but) {
           but.click();

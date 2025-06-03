@@ -13,4 +13,10 @@ export {buyDiamondUpgrade1, buyDiamondUpgrade2, buyDiamondUpgrade3, buyDiamondUp
 export {setDiamondBuyQuant} from "./buildings/diamond"
 export {setAutoPrestige, toggleAutoPrestige, toggleAutoPrestigeMode, isAutoPrestigeEnabled, getAutoPrestigeMode} from "./buildings/diamond"
 
-export {coinBuyQuant, diamondBuyQuant} from "./utils"
+export {buyAugments, buyEnchantments, buyGrandmasters, buyOracles, buyWizards} from "./buildings/mythos"
+export {isAugmentsBuyable, isEnchantmentsBuyable, isGrandmastersBuyable, isOraclesBuyable, isWizardsBuyable} from "./buildings/mythos"
+export {togglAutobuyeOracles, toggleAutobuyAugments, toggleAutobuyEnchantments, toggleAutobuyGrandmasters, toggleAutobuyWizards} from "./buildings/mythos"
+export {isAutoTranscendEnabled, toggleAutoTranscend, toggleAutoTranscendeMode, setAutoTranscend, getAutoTranscendMode} from "./buildings/mythos"
+export {setMythosBuyQuant} from "./buildings/mythos"
+
+export {coinBuyQuant, diamondBuyQuant, mythosBuyQuant} from "./utils"

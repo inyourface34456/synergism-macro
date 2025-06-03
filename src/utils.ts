@@ -64,3 +64,12 @@ export let diamondBuyQuant = {
     tenk: "crystal10k",
     hunderedk: "crystal100k"
 };
+
+export let mythosBuyQuant = {
+    one: "mythosone",
+    ten: "mythosten",
+    hundered: "mythoshundred",
+    onek: "mythosthousand",
+    tenk: "mythos10k",
+    hunderedk: "mythos100k"
+};
