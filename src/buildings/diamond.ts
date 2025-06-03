@@ -1,6 +1,6 @@
-import {makeClicker, makeCheckIfAvalible} from "../utils"
+import {makeClicker, makeCheckIfAvalible, makeSetAuto} from "../utils"
 
-type buyQuant = "crystalone" |"crystalten" | "crystalhundred" | "crystalthousand" | "crystal10k" | "crystal100k";
+type buyQuant = "crystalone" | "crystalten" | "crystalhundred" | "crystalthousand" | "crystal10k" | "crystal100k";
 
 export let buyRefinery = makeClicker("buydiamond1", "Refineries");
 export let buyCoalPlant = makeClicker("buydiamond2", "Coal Plant");
@@ -22,6 +22,35 @@ export let toggleAutobuyCoalPlant = makeClicker("toggle11", "Auto Coal Plant");
 export let toggleAutobuyCoalRig = makeClicker("toggle12", "Auto Coal Rig");
 export let toggleAutobuyPickaxe = makeClicker("toggle13", "Auto Pikaxe");
 export let toggleAutobuyPandoraBox = makeClicker("toggle14", "Auto Pandoras Boxes");
+export let setAutoPrestige = makeSetAuto("prestigeamount", "Auto Prestige");
+export let toggleAutoPrestige = makeClicker("toggle15", "Toggle Auto Prestige");
+export let toggleAutoPrestigeMode = makeClicker("prestigeautotoggle", "Auto Prestige Mode Toggle");
+
+export function isAutoPrestigeEnabled() {
+    let elm = document.getElementById("toggle15");
+
+    if (elm && elm.style.borderColor === "red") {
+        return false;
+    } else if (elm && elm.style.borderColor === "green") {
+        return true;
+    } else {
+        console.error("Cannont find auto prestige button");
+        return 0;
+    }
+}
+
+export function getAutoPrestigeMode() {
+    let elm = document.getElementById("prestigeautotoggle");
+
+    if (elm && elm.innerText === "Mode: AMOUNT") {
+        return "amount";
+    } else if (elm && elm.innerText === "Mode: TIME") {
+        return "time";
+    } else {
+        console.error(`Either cannot reconzie the text, or cannot find the element.  Element obj: ${elm}`);
+        return 0;
+    }
+}
 
 export function setDiamondBuyQuant(quant: buyQuant) {
     switch (quant) {

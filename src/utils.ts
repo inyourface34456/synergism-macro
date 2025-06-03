@@ -35,6 +35,18 @@ export function makeCheckIfAvalible(id: string) {
   }
 }
 
+export function makeSetAuto(id: string, disId: string) {
+  return function (num: string) {
+    let elm: HTMLInputElement | null = document.getElementById(id) as HTMLInputElement;
+
+    if (elm) {
+      elm.value = num;
+    } else {
+      console.error(`cannot find ${disId}`);
+    }
+  }
+}
+
 export let coinBuyQuant = {
     one: "coinone",
     ten: "cointen",

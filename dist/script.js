@@ -41,9 +41,11 @@ var macroCmds = (() => {
     buyWorker: () => buyWorker,
     coinBuyQuant: () => coinBuyQuant,
     diamondBuyQuant: () => diamondBuyQuant,
+    getAutoPrestigeMode: () => getAutoPrestigeMode,
     isAccelBoostBuyable: () => isAccelBoostBuyable,
     isAccelBuyable: () => isAccelBuyable,
     isAlchemiesBuyable: () => isAlchemiesBuyable,
+    isAutoPrestigeEnabled: () => isAutoPrestigeEnabled,
     isCoalPlantBuyable: () => isCoalPlantBuyable,
     isCoalRigBuyable: () => isCoalRigBuyable,
     isCoinMintBuyable: () => isCoinMintBuyable,
@@ -54,8 +56,11 @@ var macroCmds = (() => {
     isPrinterBuyable: () => isPrinterBuyable,
     isRefineryBuyable: () => isRefineryBuyable,
     isWorkerBuyable: () => isWorkerBuyable,
+    setAutoPrestige: () => setAutoPrestige,
     setCoinBuyQuant: () => setCoinBuyQuant,
     setDiamondBuyQuant: () => setDiamondBuyQuant,
+    toggleAutoPrestige: () => toggleAutoPrestige,
+    toggleAutoPrestigeMode: () => toggleAutoPrestigeMode,
     toggleAutobuyAccel: () => toggleAutobuyAccel,
     toggleAutobuyAccelBoost: () => toggleAutobuyAccelBoost,
     toggleAutobuyAlchemies: () => toggleAutobuyAlchemies,
@@ -102,6 +107,16 @@ var macroCmds = (() => {
         return true;
       } else {
         return false;
+      }
+    };
+  }
+  function makeSetAuto(id, disId) {
+    return function(num) {
+      let elm = document.getElementById(id);
+      if (elm) {
+        elm.value = num;
+      } else {
+        console.error(`cannot find ${disId}`);
       }
     };
   }
@@ -232,6 +247,31 @@ var macroCmds = (() => {
   var toggleAutobuyCoalRig = makeClicker("toggle12", "Auto Coal Rig");
   var toggleAutobuyPickaxe = makeClicker("toggle13", "Auto Pikaxe");
   var toggleAutobuyPandoraBox = makeClicker("toggle14", "Auto Pandoras Boxes");
+  var setAutoPrestige = makeSetAuto("prestigeamount", "Auto Prestige");
+  var toggleAutoPrestige = makeClicker("toggle15", "Toggle Auto Prestige");
+  var toggleAutoPrestigeMode = makeClicker("prestigeautotoggle", "Auto Prestige Mode Toggle");
+  function isAutoPrestigeEnabled() {
+    let elm = document.getElementById("toggle15");
+    if (elm && elm.style.borderColor === "red") {
+      return false;
+    } else if (elm && elm.style.borderColor === "green") {
+      return true;
+    } else {
+      console.error("Cannont find auto prestige button");
+      return 0;
+    }
+  }
+  function getAutoPrestigeMode() {
+    let elm = document.getElementById("prestigeautotoggle");
+    if (elm && elm.innerText === "Mode: AMOUNT") {
+      return "amount";
+    } else if (elm && elm.innerText === "Mode: TIME") {
+      return "time";
+    } else {
+      console.error(`Either cannot reconzie the text, or cannot find the element.  Element obj: ${elm}`);
+      return 0;
+    }
+  }
   function setDiamondBuyQuant(quant) {
     switch (quant) {
       case "crystalone":

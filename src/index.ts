@@ -11,5 +11,6 @@ export {toggleAutobuyCoalPlant, toggleAutobuyCoalRig, toggleAutobuyPandoraBox, t
 export {isCoalPlantBuyable, isCoalRigBuyable, isPandorasBoxBuyable, isPikaxeBuyable, isRefineryBuyable} from "./buildings/diamond"
 export {buyDiamondUpgrade1, buyDiamondUpgrade2, buyDiamondUpgrade3, buyDiamondUpgrade4, buyDiamondUpgrade5} from "./buildings/diamond"
 export {setDiamondBuyQuant} from "./buildings/diamond"
+export {setAutoPrestige, toggleAutoPrestige, toggleAutoPrestigeMode, isAutoPrestigeEnabled, getAutoPrestigeMode} from "./buildings/diamond"
 
 export {coinBuyQuant, diamondBuyQuant} from "./utils"
