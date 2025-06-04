@@ -47,29 +47,3 @@ export function makeSetAuto(id: string, disId: string) {
   }
 }
 
-export let coinBuyQuant = {
-    one: "coinone",
-    ten: "cointen",
-    hundered: "coinhundred",
-    onek: "cointhousand",
-    tenk: "coin10k",
-    hunderedk: "coin100k"
-};
-
-export let diamondBuyQuant = {
-    one: "crystalone",
-    ten: "crystalten",
-    hundered: "crystalhundred",
-    onek: "crystalthousand",
-    tenk: "crystal10k",
-    hunderedk: "crystal100k"
-};
-
-export let mythosBuyQuant = {
-    one: "mythosone",
-    ten: "mythosten",
-    hundered: "mythoshundred",
-    onek: "mythosthousand",
-    tenk: "mythos10k",
-    hunderedk: "mythos100k"
-};

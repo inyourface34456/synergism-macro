@@ -1,41 +1,41 @@
 import {makeClicker, makeCheckIfAvalible, makeSetAuto} from "../utils"
 
-type buyQuant = "mythosone" | "mythosten" | "mythoshundred" | "mythosthousand" | "mythos10k" | "mythos100k";
+type buyQuant = "particleone" | "particlesten" | "particlehundred" | "particlethousand" | "particle10k" | "particle100k";
 
-export let buyAugments = makeClicker("buymythos1", "Augments");
-export let isAugmentsBuyable = makeCheckIfAvalible("buymythos1");
-export let toggleAutobuyAugments = makeClicker("toggle16", "Augments Auto Buy");
-export let buyEnchantments = makeClicker("buymythos2", "Enchantments");
-export let isEnchantmentsBuyable = makeCheckIfAvalible("buymythos2");
-export let toggleAutobuyEnchantments = makeClicker("toggle17", "Enchantmants Auto Buy");
-export let buyWizards = makeClicker("buymythos3", "Wizards");
-export let isWizardsBuyable = makeCheckIfAvalible("buymythos3");
-export let toggleAutobuyWizards = makeClicker("toggle18", "Wizards Auto Buy");
-export let buyOracles = makeClicker("buymythos4", "Oracles");
-export let isOraclesBuyable = makeCheckIfAvalible("buymythos4");
-export let togglAutobuyeOracles = makeClicker("toggle19", "Oracles Auto Buy");
-export let buyGrandmasters = makeClicker("buymythos5", "Grandmasters");
-export let isGrandmastersBuyable = makeCheckIfAvalible("buymythos5");
-export let toggleAutobuyGrandmasters = makeClicker("toggle20", "Grandmasters Auto Buy");
-export let setAutoTranscend = makeSetAuto("transcendamount", "Auto Transcend");
-export let toggleAutoTranscend = makeClicker("toggle21", "Toggle Auto Transcend");
-export let toggleAutoTranscendeMode = makeClicker("transcendautotoggle", "Auto Transcend Mode Toggle");
+export let buyProton = makeClicker("buyparticles1", "Proton");
+export let isProtonbuyable = makeCheckIfAvalible("buyparticles1");
+export let toggleAutobuyProton = makeClicker("toggle22", "Proton Auto Buy");
+export let buyElement = makeClicker("buyparticles2", "Element");
+export let isElementbuyable = makeCheckIfAvalible("buyparticles2");
+export let toggleAutobuyElement = makeClicker("toggle23", "Element Auto Buy");
+export let buyPulsar = makeClicker("buyparticles3", "Pulsars");
+export let isPulsarbuyable = makeCheckIfAvalible("buyparticles3");
+export let toggleAutobuyPulsar = makeClicker("toggle24", "Pulsar Auto Buy");
+export let buyQuasar = makeClicker("buyparticles4", "Quarsars");
+export let isQuasarbuyable = makeCheckIfAvalible("buyparticles4");
+export let toggleAutobuyQuasar = makeClicker("toggle25", "Quasar Auto Buy");
+export let buyGalacticNuclei = makeClicker("buyparticles5", "Galactic Nuclei");
+export let isGalacticNucleibuyable = makeCheckIfAvalible("buyparticles5");
+export let toggleAutobuyGalacticNuclei = makeClicker("toggle26", "Galactic Nuclei Auto Buy");
+export let setAutoParticle = makeSetAuto("reincarnationamount", "Auto Reincarnate");
+export let toggleAutoParticle = makeClicker("toggle27", "Toggle Auto Reincarnate");
+export let toggleAutoParticleMode = makeClicker("reincarnateautotoggle", "Auto Particle Mode Toggle");
 
-export function isAutoTranscendEnabled() {
-    let elm = document.getElementById("toggle20");
+export function isAutoParticleEnabled() {
+    let elm = document.getElementById("toggle27");
 
     if (elm && elm.style.borderColor === "red") {
         return false;
     } else if (elm && elm.style.borderColor === "green") {
         return true;
     } else {
-        console.error("Cannont find auto Transcend button");
+        console.error("Cannont find auto Particle button");
         return 0;
     }
 }
 
-export function getAutoTranscendMode() {
-    let elm = document.getElementById("transcendautotoggle");
+export function getAutoParticleMode() {
+    let elm = document.getElementById("reincarnateautotoggle");
 
     if (elm && elm.innerText === "Mode: AMOUNT") {
         return "amount";
@@ -47,9 +47,9 @@ export function getAutoTranscendMode() {
     }
 }
 
-export function setMythosBuyQuant(quant: buyQuant) {
+export function setParticleBuyQuant(quant: buyQuant) {
     switch (quant) {
-        case "mythosone":
+        case "particleone":
             var but = document.getElementById(quant);
             
             if (but) {
@@ -59,7 +59,7 @@ export function setMythosBuyQuant(quant: buyQuant) {
             }
 
             return;
-        case "mythosten":
+        case "particlesten":
             var but = document.getElementById(quant);
             
             if (but) {
@@ -69,7 +69,7 @@ export function setMythosBuyQuant(quant: buyQuant) {
             }
             
             return;
-        case "mythoshundred":
+        case "particlehundred":
             var but = document.getElementById(quant);
             
             if (but) {
@@ -79,7 +79,7 @@ export function setMythosBuyQuant(quant: buyQuant) {
             }
             
             return;
-        case "mythosthousand":
+        case "particlethousand":
             var but = document.getElementById(quant);
             
             if (but) {
@@ -89,7 +89,7 @@ export function setMythosBuyQuant(quant: buyQuant) {
             }
             
             return;
-        case "mythos10k":
+        case "particle10k":
             var but = document.getElementById(quant);
             
             if (but) {
@@ -99,7 +99,7 @@ export function setMythosBuyQuant(quant: buyQuant) {
             }
             
             return;
-        case "mythos100k":
+        case "particle100k":
             var but = document.getElementById(quant);
             
             if (but) {

@@ -33,7 +33,9 @@ var macroCmds = (() => {
     buyDiamondUpgrade3: () => buyDiamondUpgrade3,
     buyDiamondUpgrade4: () => buyDiamondUpgrade4,
     buyDiamondUpgrade5: () => buyDiamondUpgrade5,
+    buyElement: () => buyElement,
     buyEnchantments: () => buyEnchantments,
+    buyGalacticNuclei: () => buyGalacticNuclei,
     buyGrandmasters: () => buyGrandmasters,
     buyInvestment: () => buyInvestment,
     buyMult: () => buyMult,
@@ -41,23 +43,30 @@ var macroCmds = (() => {
     buyPandorasBox: () => buyPandorasBox,
     buyPikaxe: () => buyPikaxe,
     buyPrinter: () => buyPrinter,
+    buyProton: () => buyProton,
+    buyPulsar: () => buyPulsar,
+    buyQuasar: () => buyQuasar,
     buyRefinery: () => buyRefinery,
     buyWizards: () => buyWizards,
     buyWorker: () => buyWorker,
     coinBuyQuant: () => coinBuyQuant,
     diamondBuyQuant: () => diamondBuyQuant,
+    getAutoParticleMode: () => getAutoParticleMode,
     getAutoPrestigeMode: () => getAutoPrestigeMode,
     getAutoTranscendMode: () => getAutoTranscendMode,
     isAccelBoostBuyable: () => isAccelBoostBuyable,
     isAccelBuyable: () => isAccelBuyable,
     isAlchemiesBuyable: () => isAlchemiesBuyable,
     isAugmentsBuyable: () => isAugmentsBuyable,
+    isAutoParticleEnabled: () => isAutoParticleEnabled,
     isAutoPrestigeEnabled: () => isAutoPrestigeEnabled,
     isAutoTranscendEnabled: () => isAutoTranscendEnabled,
     isCoalPlantBuyable: () => isCoalPlantBuyable,
     isCoalRigBuyable: () => isCoalRigBuyable,
     isCoinMintBuyable: () => isCoinMintBuyable,
+    isElementbuyable: () => isElementbuyable,
     isEnchantmentsBuyable: () => isEnchantmentsBuyable,
+    isGalacticNucleibuyable: () => isGalacticNucleibuyable,
     isGrandmastersBuyable: () => isGrandmastersBuyable,
     isInvestmentBuyable: () => isInvestmentBuyable,
     isMultBuyable: () => isMultBuyable,
@@ -65,16 +74,24 @@ var macroCmds = (() => {
     isPandorasBoxBuyable: () => isPandorasBoxBuyable,
     isPikaxeBuyable: () => isPikaxeBuyable,
     isPrinterBuyable: () => isPrinterBuyable,
+    isProtonbuyable: () => isProtonbuyable,
+    isPulsarbuyable: () => isPulsarbuyable,
+    isQuasarbuyable: () => isQuasarbuyable,
     isRefineryBuyable: () => isRefineryBuyable,
     isWizardsBuyable: () => isWizardsBuyable,
     isWorkerBuyable: () => isWorkerBuyable,
     mythosBuyQuant: () => mythosBuyQuant,
+    reincarnateBuyQuant: () => reincarnateBuyQuant,
+    setAutoParticle: () => setAutoParticle,
     setAutoPrestige: () => setAutoPrestige,
     setAutoTranscend: () => setAutoTranscend,
     setCoinBuyQuant: () => setCoinBuyQuant,
     setDiamondBuyQuant: () => setDiamondBuyQuant,
     setMythosBuyQuant: () => setMythosBuyQuant,
+    setParticleBuyQuant: () => setParticleBuyQuant,
     togglAutobuyeOracles: () => togglAutobuyeOracles,
+    toggleAutoParticle: () => toggleAutoParticle,
+    toggleAutoParticleMode: () => toggleAutoParticleMode,
     toggleAutoPrestige: () => toggleAutoPrestige,
     toggleAutoPrestigeMode: () => toggleAutoPrestigeMode,
     toggleAutoTranscend: () => toggleAutoTranscend,
@@ -86,13 +103,18 @@ var macroCmds = (() => {
     toggleAutobuyCoalPlant: () => toggleAutobuyCoalPlant,
     toggleAutobuyCoalRig: () => toggleAutobuyCoalRig,
     toggleAutobuyCoinMint: () => toggleAutobuyCoinMint,
+    toggleAutobuyElement: () => toggleAutobuyElement,
     toggleAutobuyEnchantments: () => toggleAutobuyEnchantments,
+    toggleAutobuyGalacticNuclei: () => toggleAutobuyGalacticNuclei,
     toggleAutobuyGrandmasters: () => toggleAutobuyGrandmasters,
     toggleAutobuyInvestment: () => toggleAutobuyInvestment,
     toggleAutobuyMult: () => toggleAutobuyMult,
     toggleAutobuyPandoraBox: () => toggleAutobuyPandoraBox,
     toggleAutobuyPickaxe: () => toggleAutobuyPickaxe,
     toggleAutobuyPrinter: () => toggleAutobuyPrinter,
+    toggleAutobuyProton: () => toggleAutobuyProton,
+    toggleAutobuyPulsar: () => toggleAutobuyPulsar,
+    toggleAutobuyQuasar: () => toggleAutobuyQuasar,
     toggleAutobuyRefinery: () => toggleAutobuyRefinery,
     toggleAutobuyWizards: () => toggleAutobuyWizards,
     toggleAutobuyWorker: () => toggleAutobuyWorker
@@ -142,30 +164,6 @@ var macroCmds = (() => {
       }
     };
   }
-  var coinBuyQuant = {
-    one: "coinone",
-    ten: "cointen",
-    hundered: "coinhundred",
-    onek: "cointhousand",
-    tenk: "coin10k",
-    hunderedk: "coin100k"
-  };
-  var diamondBuyQuant = {
-    one: "crystalone",
-    ten: "crystalten",
-    hundered: "crystalhundred",
-    onek: "crystalthousand",
-    tenk: "crystal10k",
-    hunderedk: "crystal100k"
-  };
-  var mythosBuyQuant = {
-    one: "mythosone",
-    ten: "mythosten",
-    hundered: "mythoshundred",
-    onek: "mythosthousand",
-    tenk: "mythos10k",
-    hunderedk: "mythos100k"
-  };
 
   // src/buildings/coin.ts
   var workerId = "buycoin1";
@@ -375,7 +373,7 @@ var macroCmds = (() => {
   var isGrandmastersBuyable = makeCheckIfAvalible("buymythos5");
   var toggleAutobuyGrandmasters = makeClicker("toggle20", "Grandmasters Auto Buy");
   var setAutoTranscend = makeSetAuto("transcendamount", "Auto Transcend");
-  var toggleAutoTranscend = makeClicker("toggle21pp", "Toggle Auto Transcend");
+  var toggleAutoTranscend = makeClicker("toggle21", "Toggle Auto Transcend");
   var toggleAutoTranscendeMode = makeClicker("transcendautotoggle", "Auto Transcend Mode Toggle");
   function isAutoTranscendEnabled() {
     let elm = document.getElementById("toggle20");
@@ -454,5 +452,136 @@ var macroCmds = (() => {
         return;
     }
   }
+
+  // src/buildings/reincarnate.ts
+  var buyProton = makeClicker("buyparticles1", "Proton");
+  var isProtonbuyable = makeCheckIfAvalible("buyparticles1");
+  var toggleAutobuyProton = makeClicker("toggle22", "Proton Auto Buy");
+  var buyElement = makeClicker("buyparticles2", "Element");
+  var isElementbuyable = makeCheckIfAvalible("buyparticles2");
+  var toggleAutobuyElement = makeClicker("toggle23", "Element Auto Buy");
+  var buyPulsar = makeClicker("buyparticles3", "Pulsars");
+  var isPulsarbuyable = makeCheckIfAvalible("buyparticles3");
+  var toggleAutobuyPulsar = makeClicker("toggle24", "Pulsar Auto Buy");
+  var buyQuasar = makeClicker("buyparticles4", "Quarsars");
+  var isQuasarbuyable = makeCheckIfAvalible("buyparticles4");
+  var toggleAutobuyQuasar = makeClicker("toggle25", "Quasar Auto Buy");
+  var buyGalacticNuclei = makeClicker("buyparticles5", "Galactic Nuclei");
+  var isGalacticNucleibuyable = makeCheckIfAvalible("buyparticles5");
+  var toggleAutobuyGalacticNuclei = makeClicker("toggle26", "Galactic Nuclei Auto Buy");
+  var setAutoParticle = makeSetAuto("reincarnationamount", "Auto Reincarnate");
+  var toggleAutoParticle = makeClicker("toggle27", "Toggle Auto Reincarnate");
+  var toggleAutoParticleMode = makeClicker("reincarnateautotoggle", "Auto Particle Mode Toggle");
+  function isAutoParticleEnabled() {
+    let elm = document.getElementById("toggle27");
+    if (elm && elm.style.borderColor === "red") {
+      return false;
+    } else if (elm && elm.style.borderColor === "green") {
+      return true;
+    } else {
+      console.error("Cannont find auto Particle button");
+      return 0;
+    }
+  }
+  function getAutoParticleMode() {
+    let elm = document.getElementById("reincarnateautotoggle");
+    if (elm && elm.innerText === "Mode: AMOUNT") {
+      return "amount";
+    } else if (elm && elm.innerText === "Mode: TIME") {
+      return "time";
+    } else {
+      console.error(`Either cannot reconzie the text, or cannot find the element.  Element obj: ${elm}`);
+      return 0;
+    }
+  }
+  function setParticleBuyQuant(quant) {
+    switch (quant) {
+      case "particleone":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "particlesten":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "particlehundred":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "particlethousand":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "particle10k":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "particle100k":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      default:
+        console.error("invalid input");
+        return;
+    }
+  }
+
+  // src/buyQuants.ts
+  var coinBuyQuant = {
+    one: "coinone",
+    ten: "cointen",
+    hundered: "coinhundred",
+    onek: "cointhousand",
+    tenk: "coin10k",
+    hunderedk: "coin100k"
+  };
+  var diamondBuyQuant = {
+    one: "crystalone",
+    ten: "crystalten",
+    hundered: "crystalhundred",
+    onek: "crystalthousand",
+    tenk: "crystal10k",
+    hunderedk: "crystal100k"
+  };
+  var mythosBuyQuant = {
+    one: "mythosone",
+    ten: "mythosten",
+    hundered: "mythoshundred",
+    onek: "mythosthousand",
+    tenk: "mythos10k",
+    hunderedk: "mythos100k"
+  };
+  var reincarnateBuyQuant = {
+    one: "particleone",
+    ten: "particlesten",
+    hundered: "particlehundred",
+    onek: "particlethousand",
+    tenk: "particle10k",
+    hunderedk: "particle100k"
+  };
   return __toCommonJS(index_exports);
 })();

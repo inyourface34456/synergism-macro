@@ -19,4 +19,9 @@ export {togglAutobuyeOracles, toggleAutobuyAugments, toggleAutobuyEnchantments, 
 export {isAutoTranscendEnabled, toggleAutoTranscend, toggleAutoTranscendeMode, setAutoTranscend, getAutoTranscendMode} from "./buildings/mythos"
 export {setMythosBuyQuant} from "./buildings/mythos"
 
-export {coinBuyQuant, diamondBuyQuant, mythosBuyQuant} from "./utils"
+export {buyElement, buyGalacticNuclei, buyProton, buyPulsar, buyQuasar} from "./buildings/reincarnate"
+export {isElementbuyable, isGalacticNucleibuyable, isProtonbuyable, isPulsarbuyable, isQuasarbuyable} from "./buildings/reincarnate"
+export {toggleAutobuyElement, toggleAutobuyGalacticNuclei, toggleAutobuyProton, toggleAutobuyPulsar, toggleAutobuyQuasar} from "./buildings/reincarnate"
+export {setAutoParticle, toggleAutoParticle, toggleAutoParticleMode, isAutoParticleEnabled, getAutoParticleMode, setParticleBuyQuant} from "./buildings/reincarnate"
+
+export {coinBuyQuant, diamondBuyQuant, mythosBuyQuant, reincarnateBuyQuant} from "./buyQuants"
