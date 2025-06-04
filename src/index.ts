@@ -32,4 +32,4 @@ export {setAutoBuyTess, toggleAutoTessBuyMode, toggleAutoBuyTess, isAutoTessBuld
 export {constentUpgrade1, constentUpgrade10, constentUpgrade2, constentUpgrade3, constentUpgrade4, constentUpgrade5, constentUpgrade6, constentUpgrade7, constentUpgrade8, constentUpgrade9} from "./buildings/ascend"
 export {isConstantUpgrade10Bought, isConstantUpgrade1Automated, isConstantUpgrade2Automated, isConstantUpgrade3Automated, isConstantUpgrade4Automated, isConstantUpgrade5Automated, isConstantUpgrade6Automated, isConstantUpgrade7Automated, isConstantUpgrade8Automated, isConstantUpgrade9Bought} from "./buildings/ascend"
 
-export {coinBuyQuant, diamondBuyQuant, mythosBuyQuant, reincarnateBuyQuant} from "./buyQuants"
+export {coinBuyQuant, diamondBuyQuant, mythosBuyQuant, reincarnateBuyQuant, ascendBuyQuant} from "./buyQuants"

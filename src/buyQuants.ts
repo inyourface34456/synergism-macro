@@ -33,3 +33,12 @@ export let reincarnateBuyQuant = {
     tenk: "particle10k",
     hunderedk: "particle100k"
 };
+
+export let ascendBuyQuant = {
+    one: "tesseractone",
+    ten: "tesseractten",
+    hundered: "tesseracthundred",
+    onek: "tesseractthousand",
+    tenk: "tesseract10k",
+    hunderedk: "tesseract100k"
+};
