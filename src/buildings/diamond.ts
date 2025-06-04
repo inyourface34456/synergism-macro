@@ -22,7 +22,7 @@ export let toggleAutobuyCoalPlant = makeClicker("toggle11", "Auto Coal Plant");
 export let toggleAutobuyCoalRig = makeClicker("toggle12", "Auto Coal Rig");
 export let toggleAutobuyPickaxe = makeClicker("toggle13", "Auto Pikaxe");
 export let toggleAutobuyPandoraBox = makeClicker("toggle14", "Auto Pandoras Boxes");
-export let setAutoPrestige = makeSetAuto("prestigeamount", "Auto Prestige");
+export let setAutoPrestige  = makeSetAuto("prestigeamount", "Auto Prestige");
 export let toggleAutoPrestige = makeClicker("toggle15", "Toggle Auto Prestige");
 export let toggleAutoPrestigeMode = makeClicker("prestigeautotoggle", "Auto Prestige Mode Toggle");
 
