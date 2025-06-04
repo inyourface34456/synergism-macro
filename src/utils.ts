@@ -1,3 +1,8 @@
+export enum Layer {
+  Pristige,
+  Ascend
+}
+
 export function makeClicker(id: string, disId: string) {
   const element = document.getElementById(id);
   return function () {
@@ -32,6 +37,34 @@ export function makeCheckIfAvalible(id: string) {
     } else {
       return false;
     }
+  }
+}
+
+export function makeCheckIfAutomated(id: string, layer: Layer) {
+  switch (layer) {
+    case Layer.Ascend:
+      return function() {
+          let res = checkClassList(id, "constUpgradeAuto");
+
+          if (res === 0) {
+            return 0;
+          } else if (res) {
+            return true;
+          } else {
+            return false;
+          }
+      }
+
+    case Layer.Pristige:
+      return function() {
+        let res = document.getElementById(id);
+
+        if (res && res.style.backgroundColor === "green") {
+          return true;
+        } else if (!(res?.style.backgroundColor)) {
+          return false
+        }
+      }
   }
 }
 

@@ -1,4 +1,4 @@
-import {makeClicker, makeCheckIfAvalible, makeSetAuto} from "../utils"
+import {makeClicker, makeCheckIfAvalible, makeSetAuto, makeCheckIfAutomated, Layer} from "../utils"
 
 type buyQuant = "crystalone" | "crystalten" | "crystalhundred" | "crystalthousand" | "crystal10k" | "crystal100k";
 
@@ -17,6 +17,11 @@ export let buyDiamondUpgrade2 = makeClicker("buycrystalupgrade2", "Diamond Upgra
 export let buyDiamondUpgrade3 = makeClicker("buycrystalupgrade3", "Diamond Upgrade 3")
 export let buyDiamondUpgrade4 = makeClicker("buycrystalupgrade4", "Diamond Upgrade 4")
 export let buyDiamondUpgrade5 = makeClicker("buycrystalupgrade5", "Diamond Upgrade 5")
+export let isDiamondUpgrade1Automated = makeCheckIfAutomated("buycrystalupgrade1", Layer.Pristige);
+export let isDiamondUpgrade2Automated = makeCheckIfAutomated("buycrystalupgrade2", Layer.Pristige);
+export let isDiamondUpgrade3Automated = makeCheckIfAutomated("buycrystalupgrade3", Layer.Pristige);
+export let isDiamondUpgrade4Automated = makeCheckIfAutomated("buycrystalupgrade4", Layer.Pristige);
+export let isDiamondUpgrade5Automated = makeCheckIfAutomated("buycrystalupgrade5", Layer.Pristige);
 export let toggleAutobuyRefinery = makeClicker("toggle10", "Auto Refineries");
 export let toggleAutobuyCoalPlant = makeClicker("toggle11", "Auto Coal Plant");
 export let toggleAutobuyCoalRig = makeClicker("toggle12", "Auto Coal Rig");
@@ -25,6 +30,7 @@ export let toggleAutobuyPandoraBox = makeClicker("toggle14", "Auto Pandoras Boxe
 export let setAutoPrestige  = makeSetAuto("prestigeamount", "Auto Prestige");
 export let toggleAutoPrestige = makeClicker("toggle15", "Toggle Auto Prestige");
 export let toggleAutoPrestigeMode = makeClicker("prestigeautotoggle", "Auto Prestige Mode Toggle");
+
 
 export function isAutoPrestigeEnabled() {
     let elm = document.getElementById("toggle15");

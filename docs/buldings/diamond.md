@@ -27,6 +27,10 @@ All return `true` if buyable, `false` if not, and `0` if error occurs
 - `buyDiamondUpgrade4()`: Purchase Diamond Upgrade 4
 - `buyDiamondUpgrade5()`: Purchase Diamond Upgrade 5
 
+## Automation Chacks
+- `isDiamondUpgrade[1-5]Automated`: This will check if the diamond upgrade is automated
+
+
 ## Auto-Buy Toggle Functions
 - `toggleAutobuyRefinery()`: Toggle auto-buy for Refineries (toggle10)
 - `toggleAutobuyCoalPlant()`: Toggle auto-buy for Coal Plants (toggle11)
