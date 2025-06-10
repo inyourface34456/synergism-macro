@@ -1,6 +1,5 @@
 import { makeClicker, makeCheckIfAvalible, Type } from "../utils"
 
-
 export let buyDiamondUpgrade1 = makeClicker("upg21", "Diamond Upgrade 1");
 export let isDiamondUpgrade1Buyable = makeCheckIfAvalible("upg21", Type.Upgrade);
 
@@ -63,7 +62,7 @@ export let isDiamondUpgrade20Buyable = makeCheckIfAvalible("upg40", Type.Upgrade
 
 export let toggleDiamondUpgradeAutoBuy = makeClicker("prestigeAutoUpgrade", "Diamond Auto Upgrade");
 
-export function getAutoUpgraderStatus() {
+export function getDiamondAutoUpgraderStatus() {
     let id: HTMLButtonElement = document.getElementById("prestigeAutoUpgrade") as HTMLButtonElement;
 
     if (!id) {

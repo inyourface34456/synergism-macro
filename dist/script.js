@@ -82,6 +82,26 @@ var macroCmds = (() => {
     buyHilbertSpace: () => buyHilbertSpace,
     buyInvestment: () => buyInvestment,
     buyMult: () => buyMult,
+    buyMythosUpgrade1: () => buyMythosUpgrade1,
+    buyMythosUpgrade10: () => buyMythosUpgrade10,
+    buyMythosUpgrade11: () => buyMythosUpgrade11,
+    buyMythosUpgrade12: () => buyMythosUpgrade12,
+    buyMythosUpgrade13: () => buyMythosUpgrade13,
+    buyMythosUpgrade14: () => buyMythosUpgrade14,
+    buyMythosUpgrade15: () => buyMythosUpgrade15,
+    buyMythosUpgrade16: () => buyMythosUpgrade16,
+    buyMythosUpgrade17: () => buyMythosUpgrade17,
+    buyMythosUpgrade18: () => buyMythosUpgrade18,
+    buyMythosUpgrade19: () => buyMythosUpgrade19,
+    buyMythosUpgrade2: () => buyMythosUpgrade2,
+    buyMythosUpgrade20: () => buyMythosUpgrade20,
+    buyMythosUpgrade3: () => buyMythosUpgrade3,
+    buyMythosUpgrade4: () => buyMythosUpgrade4,
+    buyMythosUpgrade5: () => buyMythosUpgrade5,
+    buyMythosUpgrade6: () => buyMythosUpgrade6,
+    buyMythosUpgrade7: () => buyMythosUpgrade7,
+    buyMythosUpgrade8: () => buyMythosUpgrade8,
+    buyMythosUpgrade9: () => buyMythosUpgrade9,
     buyOracles: () => buyOracles,
     buyPandorasBox: () => buyPandorasBox,
     buyPikaxe: () => buyPikaxe,
@@ -115,7 +135,9 @@ var macroCmds = (() => {
     getAutoPrestigeMode: () => getAutoPrestigeMode,
     getAutoTessBuyMode: () => getAutoTessBuyMode,
     getAutoTranscendMode: () => getAutoTranscendMode,
-    getAutoUpgraderStatus: () => getAutoUpgraderStatus,
+    getCoinAutoUpgraderStatus: () => getCoinAutoUpgraderStatus,
+    getDiamondAutoUpgraderStatus: () => getDiamondAutoUpgraderStatus,
+    getMythosAutoUpgraderStatus: () => getMythosAutoUpgraderStatus,
     isAccelBoostBuyable: () => isAccelBoostBuyable,
     isAccelBuyable: () => isAccelBuyable,
     isAlchemiesBuyable: () => isAlchemiesBuyable,
@@ -191,6 +213,26 @@ var macroCmds = (() => {
     isHilbertSpacebuyable: () => isHilbertSpacebuyable,
     isInvestmentBuyable: () => isInvestmentBuyable,
     isMultBuyable: () => isMultBuyable,
+    isMythosUpgrade10Buyable: () => isMythosUpgrade10Buyable,
+    isMythosUpgrade11Buyable: () => isMythosUpgrade11Buyable,
+    isMythosUpgrade12Buyable: () => isMythosUpgrade12Buyable,
+    isMythosUpgrade13Buyable: () => isMythosUpgrade13Buyable,
+    isMythosUpgrade14Buyable: () => isMythosUpgrade14Buyable,
+    isMythosUpgrade15Buyable: () => isMythosUpgrade15Buyable,
+    isMythosUpgrade16Buyable: () => isMythosUpgrade16Buyable,
+    isMythosUpgrade17Buyable: () => isMythosUpgrade17Buyable,
+    isMythosUpgrade18Buyable: () => isMythosUpgrade18Buyable,
+    isMythosUpgrade19Buyable: () => isMythosUpgrade19Buyable,
+    isMythosUpgrade1Buyable: () => isMythosUpgrade1Buyable,
+    isMythosUpgrade20Buyable: () => isMythosUpgrade20Buyable,
+    isMythosUpgrade2Buyable: () => isMythosUpgrade2Buyable,
+    isMythosUpgrade3Buyable: () => isMythosUpgrade3Buyable,
+    isMythosUpgrade4Buyable: () => isMythosUpgrade4Buyable,
+    isMythosUpgrade5Buyable: () => isMythosUpgrade5Buyable,
+    isMythosUpgrade6Buyable: () => isMythosUpgrade6Buyable,
+    isMythosUpgrade7Buyable: () => isMythosUpgrade7Buyable,
+    isMythosUpgrade8Buyable: () => isMythosUpgrade8Buyable,
+    isMythosUpgrade9Buyable: () => isMythosUpgrade9Buyable,
     isOraclesBuyable: () => isOraclesBuyable,
     isPandorasBoxBuyable: () => isPandorasBoxBuyable,
     isPikaxeBuyable: () => isPikaxeBuyable,
@@ -256,7 +298,8 @@ var macroCmds = (() => {
     toggleAutobuyWizards: () => toggleAutobuyWizards,
     toggleAutobuyWorker: () => toggleAutobuyWorker,
     toggleCoinUpgradeAutoBuy: () => toggleCoinUpgradeAutoBuy,
-    toggleDiamondUpgradeAutoBuy: () => toggleDiamondUpgradeAutoBuy
+    toggleDiamondUpgradeAutoBuy: () => toggleDiamondUpgradeAutoBuy,
+    toggleMythosUpgradeAutoBuy: () => toggleMythosUpgradeAutoBuy
   });
 
   // src/utils.ts
@@ -266,14 +309,14 @@ var macroCmds = (() => {
       if (element) {
         element.click();
       } else {
-        console.error(`cannot find the ${disId} button"`);
+        console.error(`cannot find the ${disId} button: ${element}"`);
       }
     };
   }
   function checkClassList(id, className) {
     let element = document.getElementById(id);
     if (!element) {
-      console.error(`cannot find the element ${id}`);
+      console.error(`cannot find the element ${id}: ${element}`);
       return 0;
     } else if (element && element.classList.contains(className)) {
       return true;
@@ -901,7 +944,7 @@ var macroCmds = (() => {
   var buyCoinUpgrade25 = makeClicker("upg125", "Coin Upgrade 25");
   var isCoinUpgrade25Buyable = makeCheckIfAvalible("upg125", 1 /* Upgrade */);
   var toggleCoinUpgradeAutoBuy = makeClicker("coinAutoUpgrade", "Coin Auto Upgrade");
-  function getAutoUpgraderStatus() {
+  function getCoinAutoUpgraderStatus() {
     let id = document.getElementById("coinAutoUpgrade");
     if (!id) {
       console.error(`Cannot find the coin auto upgrade button, or somethings is worng: ${id}`);
@@ -955,6 +998,71 @@ var macroCmds = (() => {
   var buyDiamondUpgrade20 = makeClicker("upg40", "Diamond Upgrade 20");
   var isDiamondUpgrade20Buyable = makeCheckIfAvalible("upg40", 1 /* Upgrade */);
   var toggleDiamondUpgradeAutoBuy = makeClicker("prestigeAutoUpgrade", "Diamond Auto Upgrade");
+  function getDiamondAutoUpgraderStatus() {
+    let id = document.getElementById("prestigeAutoUpgrade");
+    if (!id) {
+      console.error(`Cannot find the Diamond auto upgrade button, or somethings is worng: ${id}`);
+      return 0;
+    } else if ((id == null ? void 0 : id.style.borderColor) === "red") {
+      return false;
+    } else if ((id == null ? void 0 : id.style.borderColor) === "green") {
+      return true;
+    }
+  }
+
+  // src/upgrades/mythos.ts
+  var buyMythosUpgrade1 = makeClicker("upg41", "Mythos Upgrade 1");
+  var isMythosUpgrade1Buyable = makeCheckIfAvalible("upg41", 1 /* Upgrade */);
+  var buyMythosUpgrade2 = makeClicker("upg42", "Mythos Upgrade 2");
+  var isMythosUpgrade2Buyable = makeCheckIfAvalible("upg42", 1 /* Upgrade */);
+  var buyMythosUpgrade3 = makeClicker("upg43", "Mythos Upgrade 3");
+  var isMythosUpgrade3Buyable = makeCheckIfAvalible("upg43", 1 /* Upgrade */);
+  var buyMythosUpgrade4 = makeClicker("upg44", "Mythos Upgrade 4");
+  var isMythosUpgrade4Buyable = makeCheckIfAvalible("upg44", 1 /* Upgrade */);
+  var buyMythosUpgrade5 = makeClicker("upg45", "Mythos Upgrade 5");
+  var isMythosUpgrade5Buyable = makeCheckIfAvalible("upg45", 1 /* Upgrade */);
+  var buyMythosUpgrade6 = makeClicker("upg46", "Mythos Upgrade 6");
+  var isMythosUpgrade6Buyable = makeCheckIfAvalible("upg46", 1 /* Upgrade */);
+  var buyMythosUpgrade7 = makeClicker("upg47", "Mythos Upgrade 7");
+  var isMythosUpgrade7Buyable = makeCheckIfAvalible("upg47", 1 /* Upgrade */);
+  var buyMythosUpgrade8 = makeClicker("upg48", "Mythos Upgrade 8");
+  var isMythosUpgrade8Buyable = makeCheckIfAvalible("upg48", 1 /* Upgrade */);
+  var buyMythosUpgrade9 = makeClicker("upg49", "Mythos Upgrade 9");
+  var isMythosUpgrade9Buyable = makeCheckIfAvalible("upg49", 1 /* Upgrade */);
+  var buyMythosUpgrade10 = makeClicker("upg50", "Mythos Upgrade 10");
+  var isMythosUpgrade10Buyable = makeCheckIfAvalible("upg50", 1 /* Upgrade */);
+  var buyMythosUpgrade11 = makeClicker("upg51", "Mythos Upgrade 11");
+  var isMythosUpgrade11Buyable = makeCheckIfAvalible("upg51", 1 /* Upgrade */);
+  var buyMythosUpgrade12 = makeClicker("upg52", "Mythos Upgrade 12");
+  var isMythosUpgrade12Buyable = makeCheckIfAvalible("upg52", 1 /* Upgrade */);
+  var buyMythosUpgrade13 = makeClicker("upg53", "Mythos Upgrade 13");
+  var isMythosUpgrade13Buyable = makeCheckIfAvalible("upg53", 1 /* Upgrade */);
+  var buyMythosUpgrade14 = makeClicker("upg54", "Mythos Upgrade 14");
+  var isMythosUpgrade14Buyable = makeCheckIfAvalible("upg54", 1 /* Upgrade */);
+  var buyMythosUpgrade15 = makeClicker("upg55", "Mythos Upgrade 15");
+  var isMythosUpgrade15Buyable = makeCheckIfAvalible("upg55", 1 /* Upgrade */);
+  var buyMythosUpgrade16 = makeClicker("upg56", "Mythos Upgrade 16");
+  var isMythosUpgrade16Buyable = makeCheckIfAvalible("upg56", 1 /* Upgrade */);
+  var buyMythosUpgrade17 = makeClicker("upg57", "Mythos Upgrade 17");
+  var isMythosUpgrade17Buyable = makeCheckIfAvalible("upg57", 1 /* Upgrade */);
+  var buyMythosUpgrade18 = makeClicker("upg58", "Mythos Upgrade 18");
+  var isMythosUpgrade18Buyable = makeCheckIfAvalible("upg58", 1 /* Upgrade */);
+  var buyMythosUpgrade19 = makeClicker("upg59", "Mythos Upgrade 19");
+  var isMythosUpgrade19Buyable = makeCheckIfAvalible("upg59", 1 /* Upgrade */);
+  var buyMythosUpgrade20 = makeClicker("upg60", "Mythos Upgrade 20");
+  var isMythosUpgrade20Buyable = makeCheckIfAvalible("upg60", 1 /* Upgrade */);
+  var toggleMythosUpgradeAutoBuy = makeClicker("transcendAutoUpgrade", "Mythos Auto Upgrade");
+  function getMythosAutoUpgraderStatus() {
+    let id = document.getElementById("transcendAutoUpgrade");
+    if (!id) {
+      console.error(`Cannot find the Mythos auto upgrade button, or somethings is worng: ${id}`);
+      return 0;
+    } else if ((id == null ? void 0 : id.style.borderColor) === "red") {
+      return false;
+    } else if ((id == null ? void 0 : id.style.borderColor) === "green") {
+      return true;
+    }
+  }
 
   // src/buyQuants.ts
   var coinBuyQuant = {

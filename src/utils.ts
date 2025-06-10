@@ -14,7 +14,7 @@ export function makeClicker(id: string, disId: string) {
     if (element) {
       element.click();
     } else {
-      console.error(`cannot find the ${disId} button"`);
+      console.error(`cannot find the ${disId} button: ${element}"`);
     }
   };
 }
@@ -22,7 +22,7 @@ export function makeClicker(id: string, disId: string) {
 export function checkClassList(id: string, className: string) {
   let element = document.getElementById(id);
   if (!element) {
-    console.error(`cannot find the element ${id}`);
+    console.error(`cannot find the element ${id}: ${element}`);
     return 0;
   } else if (element && element.classList.contains(className)) {
     return true;

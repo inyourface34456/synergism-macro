@@ -40,7 +40,7 @@ export {isCoinUpgrade3Buyable, isCoinUpgrade4Buyable, isCoinUpgrade5Buyable, isC
 export {isCoinUpgrade9Buyable, buyCoinUpgrade1, buyCoinUpgrade10, buyCoinUpgrade11, buyCoinUpgrade12, buyCoinUpgrade13, buyCoinUpgrade14, buyCoinUpgrade15} from "./upgrades/coin"
 export {buyCoinUpgrade16, buyCoinUpgrade17, buyCoinUpgrade18, buyCoinUpgrade19, buyCoinUpgrade2, buyCoinUpgrade20, buyCoinUpgrade21, buyCoinUpgrade22} from "./upgrades/coin"
 export {buyCoinUpgrade23, buyCoinUpgrade24, buyCoinUpgrade25, buyCoinUpgrade3, buyCoinUpgrade4, buyCoinUpgrade5, buyCoinUpgrade6, buyCoinUpgrade7, buyCoinUpgrade8} from "./upgrades/coin"
-export {buyCoinUpgrade9, toggleCoinUpgradeAutoBuy, getAutoUpgraderStatus} from "./upgrades/coin"
+export {buyCoinUpgrade9, toggleCoinUpgradeAutoBuy, getCoinAutoUpgraderStatus} from "./upgrades/coin"
 
 export {isDiamondUpgrade10Buyable, isDiamondUpgrade11Buyable, isDiamondUpgrade12Buyable, isDiamondUpgrade13Buyable, isDiamondUpgrade14Buyable} from "./upgrades/diamond"
 export {isDiamondUpgrade15Buyable, isDiamondUpgrade16Buyable, isDiamondUpgrade17Buyable, isDiamondUpgrade18Buyable, isDiamondUpgrade19Buyable} from "./upgrades/diamond"
@@ -48,6 +48,14 @@ export {isDiamondUpgrade1Buyable, isDiamondUpgrade20Buyable, isDiamondUpgrade2Bu
 export {isDiamondUpgrade6Buyable, isDiamondUpgrade7Buyable, isDiamondUpgrade8Buyable, isDiamondUpgrade9Buyable, buyDiamondUpgrade1, buyDiamondUpgrade10} from "./upgrades/diamond"
 export {buyDiamondUpgrade11, buyDiamondUpgrade12, buyDiamondUpgrade13, buyDiamondUpgrade14, buyDiamondUpgrade15, buyDiamondUpgrade16, buyDiamondUpgrade17} from "./upgrades/diamond"
 export {buyDiamondUpgrade18, buyDiamondUpgrade19, buyDiamondUpgrade2, buyDiamondUpgrade20, buyDiamondUpgrade3, buyDiamondUpgrade4, buyDiamondUpgrade5} from "./upgrades/diamond"
-export {buyDiamondUpgrade6, buyDiamondUpgrade7, buyDiamondUpgrade8, buyDiamondUpgrade9, toggleDiamondUpgradeAutoBuy} from "./upgrades/diamond"
+export {buyDiamondUpgrade6, buyDiamondUpgrade7, buyDiamondUpgrade8, buyDiamondUpgrade9, toggleDiamondUpgradeAutoBuy, getDiamondAutoUpgraderStatus} from "./upgrades/diamond"
+
+export {isMythosUpgrade10Buyable, isMythosUpgrade11Buyable, isMythosUpgrade12Buyable, isMythosUpgrade13Buyable, isMythosUpgrade14Buyable} from "./upgrades/mythos"
+export {isMythosUpgrade15Buyable, isMythosUpgrade16Buyable, isMythosUpgrade17Buyable, isMythosUpgrade18Buyable, isMythosUpgrade19Buyable} from "./upgrades/mythos"
+export {isMythosUpgrade1Buyable, isMythosUpgrade20Buyable, isMythosUpgrade2Buyable, isMythosUpgrade3Buyable, isMythosUpgrade4Buyable, isMythosUpgrade5Buyable} from "./upgrades/mythos"
+export {isMythosUpgrade6Buyable, isMythosUpgrade7Buyable, isMythosUpgrade8Buyable, isMythosUpgrade9Buyable, buyMythosUpgrade1, buyMythosUpgrade10, buyMythosUpgrade11} from "./upgrades/mythos"
+export {buyMythosUpgrade12, buyMythosUpgrade13, buyMythosUpgrade14, buyMythosUpgrade15, buyMythosUpgrade16, buyMythosUpgrade17, buyMythosUpgrade18, buyMythosUpgrade19} from "./upgrades/mythos"
+export {buyMythosUpgrade2, buyMythosUpgrade20, buyMythosUpgrade3, buyMythosUpgrade4, buyMythosUpgrade5, buyMythosUpgrade6, buyMythosUpgrade7, buyMythosUpgrade8} from "./upgrades/mythos"
+export {buyMythosUpgrade9, toggleMythosUpgradeAutoBuy, getMythosAutoUpgraderStatus} from "./upgrades/mythos"
 
 export {coinBuyQuant, diamondBuyQuant, mythosBuyQuant, reincarnateBuyQuant, ascendBuyQuant} from "./buyQuants"
