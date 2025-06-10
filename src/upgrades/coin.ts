@@ -32,34 +32,34 @@ export let buyCoinUpgrade10 = makeClicker("upg10", "Coin Upgrade 10");
 export let isCoinUpgrade10Buyable = makeCheckIfAvalible("upg10", Type.Upgrade);
 
 export let buyCoinUpgrade11 = makeClicker("upg11", "Coin Upgrade 11");
-export let isCoinUpgrade11Buyable = makeCheckIfAvalible("upg10", Type.Upgrade);
+export let isCoinUpgrade11Buyable = makeCheckIfAvalible("upg11", Type.Upgrade);
 
 export let buyCoinUpgrade12 = makeClicker("upg12", "Coin Upgrade 12");
-export let isCoinUpgrade12Buyable = makeCheckIfAvalible("upg11", Type.Upgrade);
+export let isCoinUpgrade12Buyable = makeCheckIfAvalible("upg12", Type.Upgrade);
 
 export let buyCoinUpgrade13 = makeClicker("upg13", "Coin Upgrade 13");
-export let isCoinUpgrade13Buyable = makeCheckIfAvalible("upg12", Type.Upgrade);
+export let isCoinUpgrade13Buyable = makeCheckIfAvalible("upg13", Type.Upgrade);
 
 export let buyCoinUpgrade14 = makeClicker("upg14", "Coin Upgrade 14");
-export let isCoinUpgrade14Buyable = makeCheckIfAvalible("upg13", Type.Upgrade);
+export let isCoinUpgrade14Buyable = makeCheckIfAvalible("upg14", Type.Upgrade);
 
 export let buyCoinUpgrade15 = makeClicker("upg15", "Coin Upgrade 15");
-export let isCoinUpgrade15Buyable = makeCheckIfAvalible("upg14", Type.Upgrade);
+export let isCoinUpgrade15Buyable = makeCheckIfAvalible("upg15", Type.Upgrade);
 
 export let buyCoinUpgrade16 = makeClicker("upg16", "Coin Upgrade 16");
-export let isCoinUpgrade16Buyable = makeCheckIfAvalible("upg15", Type.Upgrade);
+export let isCoinUpgrade16Buyable = makeCheckIfAvalible("upg16", Type.Upgrade);
 
 export let buyCoinUpgrade17 = makeClicker("upg17", "Coin Upgrade 17");
-export let isCoinUpgrade17Buyable = makeCheckIfAvalible("upg16", Type.Upgrade);
+export let isCoinUpgrade17Buyable = makeCheckIfAvalible("upg17", Type.Upgrade);
 
 export let buyCoinUpgrade18 = makeClicker("upg18", "Coin Upgrade 18");
-export let isCoinUpgrade18Buyable = makeCheckIfAvalible("upg17", Type.Upgrade);
+export let isCoinUpgrade18Buyable = makeCheckIfAvalible("upg18", Type.Upgrade);
 
 export let buyCoinUpgrade19 = makeClicker("upg19", "Coin Upgrade 19");
-export let isCoinUpgrade19Buyable = makeCheckIfAvalible("upg18", Type.Upgrade);
+export let isCoinUpgrade19Buyable = makeCheckIfAvalible("upg19", Type.Upgrade);
 
 export let buyCoinUpgrade20 = makeClicker("upg20", "Coin Upgrade 20");
-export let isCoinUpgrade20Buyable = makeCheckIfAvalible("upg19", Type.Upgrade);
+export let isCoinUpgrade20Buyable = makeCheckIfAvalible("upg20", Type.Upgrade);
 
 export let buyCoinUpgrade21 = makeClicker("upg121", "Coin Upgrade 21");
 export let isCoinUpgrade21Buyable = makeCheckIfAvalible("upg121", Type.Upgrade);

@@ -21,14 +21,14 @@ All return `true` if buyable, `false` if not, and `0` if error occurs
 - `isPandorasBoxBuyable()`
 
 ## Diamond Upgrades
-- `buyDiamondUpgrade1()`: Purchase Diamond Upgrade 1
-- `buyDiamondUpgrade2()`: Purchase Diamond Upgrade 2
-- `buyDiamondUpgrade3()`: Purchase Diamond Upgrade 3
-- `buyDiamondUpgrade4()`: Purchase Diamond Upgrade 4
-- `buyDiamondUpgrade5()`: Purchase Diamond Upgrade 5
+- `buyPrestigeUpgrade1()`: Purchase Diamond Upgrade 1
+- `buyPrestigeUpgrade2()`: Purchase Diamond Upgrade 2
+- `buyPrestigeUpgrade3()`: Purchase Diamond Upgrade 3
+- `buyPrestigeUpgrade4()`: Purchase Diamond Upgrade 4
+- `buyPrestigeUpgrade5()`: Purchase Diamond Upgrade 5
 
 ## Automation Chacks
-- `isDiamondUpgrade[1-5]Automated`: This will check if the diamond upgrade is automated
+- `isPrestigeUpgrade[1-5]Automated`: This will check if the diamond upgrade is automated
 
 
 ## Auto-Buy Toggle Functions
