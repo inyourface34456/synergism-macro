@@ -1,21 +1,21 @@
-import { makeClicker, makeCheckIfAvalible, makeSetAuto, makeCheckIfAutomated, Layer} from "../utils"
+import { makeClicker, makeCheckIfAvalible, makeSetAuto, makeCheckIfAutomated, Layer, Type} from "../utils"
 
 type buyAscendQuant = "tesseractone" | "tesseractten" | "tesseracthundred" | "tesseractthousand" | "tesseract10k" | "tesseract100k";
 
 export let buyDot = makeClicker("buyTesseracts1", "Dot");
-export let isDotbuyable = makeCheckIfAvalible("buyTesseracts1");
+export let isDotbuyable = makeCheckIfAvalible("buyTesseracts1", Type.Bulding);
 export let toggleAutobuyDot = makeClicker("tesseractAutoToggle1", "Auto Buy Dot");
 export let buyVector = makeClicker("buyTesseracts2", "Vector");
-export let isVectorbuyable = makeCheckIfAvalible("buyTesseracts2");
+export let isVectorbuyable = makeCheckIfAvalible("buyTesseracts2", Type.Bulding);
 export let toggleAutobuyVector = makeClicker("tesseractAutoToggle2", "Auto Buy Vector");
 export let buyThreeSpace = makeClicker("buyTesseracts3", "Three-Space");
-export let isThreeSpacebuyable = makeCheckIfAvalible("buyTesseracts3");
+export let isThreeSpacebuyable = makeCheckIfAvalible("buyTesseracts3", Type.Bulding);
 export let toggleAutobuyThreeSpace = makeClicker("tesseractAutoToggle3", "Auto Buy Three-Space");
 export let buyBentTime = makeClicker("buyTesseracts4", "Bent Time");
-export let isBentTimebuyable = makeCheckIfAvalible("buyTesseracts4");
+export let isBentTimebuyable = makeCheckIfAvalible("buyTesseracts4", Type.Bulding);
 export let toggleAutobuyBentTime = makeClicker("tesseractAutoToggle4", "Auto Buy Bent Time");
 export let buyHilbertSpace = makeClicker("buyTesseracts5", "Hilbert Space");
-export let isHilbertSpacebuyable = makeCheckIfAvalible("buyTesseracts5");
+export let isHilbertSpacebuyable = makeCheckIfAvalible("buyTesseracts5", Type.Bulding);
 export let toggleAutobuyHilbertSpace = makeClicker("tesseractAutoToggle5", "Auto Buy Hilbert Space");
 export let setAutoBuyTess = makeSetAuto("tesseractAmount", "Auto Buy Tess");
 export let toggleAutoBuyTess = makeClicker("tesseractautobuytoggle", "Toggle Auto Reincarnate");

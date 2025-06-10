@@ -3,6 +3,11 @@ export enum Layer {
   Ascend
 }
 
+export enum Type {
+  Bulding,
+  Upgrade
+}
+
 export function makeClicker(id: string, disId: string) {
   const element = document.getElementById(id);
   return function () {
@@ -26,18 +31,35 @@ export function checkClassList(id: string, className: string) {
   }
 }
 
-export function makeCheckIfAvalible(id: string) {
-  return function () {
-    let res = checkClassList(id, "buildingPurchaseBtnAvailable");
+export function makeCheckIfAvalible(id: string, type: Type) {
+  switch (type) {
+    case Type.Bulding:
+      return function () {
+        let res = checkClassList(id, "buildingPurchaseBtnAvailable");
 
-    if (res === 0) {
-      return 0;
-    } else if (res) {
-      return true;
-    } else {
-      return false;
-    }
+        if (res === 0) {
+          return 0;
+        } else if (res) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+    case Type.Upgrade:
+      return function () {
+        let res = checkClassList(id, "green-background");
+
+        if (res === 0) {
+          return 0;
+        } else if (res) {
+          return true;
+        } else {
+          return false;
+        }
+      }
   }
+  
 }
 
 export function makeCheckIfAutomated(id: string, layer: Layer) {

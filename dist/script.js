@@ -1,4 +1,3 @@
-"use strict";
 var macroCmds = (() => {
   var __defProp = Object.defineProperty;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -21,6 +20,7 @@ var macroCmds = (() => {
   // src/index.ts
   var index_exports = {};
   __export(index_exports, {
+    ascendBuyQuant: () => ascendBuyQuant,
     buyAccel: () => buyAccel,
     buyAccelBoost: () => buyAccelBoost,
     buyAlchemies: () => buyAlchemies,
@@ -29,6 +29,31 @@ var macroCmds = (() => {
     buyCoalPlant: () => buyCoalPlant,
     buyCoalRig: () => buyCoalRig,
     buyCoinMint: () => buyCoinMint,
+    buyCoinUpgrade1: () => buyCoinUpgrade1,
+    buyCoinUpgrade10: () => buyCoinUpgrade10,
+    buyCoinUpgrade11: () => buyCoinUpgrade11,
+    buyCoinUpgrade12: () => buyCoinUpgrade12,
+    buyCoinUpgrade13: () => buyCoinUpgrade13,
+    buyCoinUpgrade14: () => buyCoinUpgrade14,
+    buyCoinUpgrade15: () => buyCoinUpgrade15,
+    buyCoinUpgrade16: () => buyCoinUpgrade16,
+    buyCoinUpgrade17: () => buyCoinUpgrade17,
+    buyCoinUpgrade18: () => buyCoinUpgrade18,
+    buyCoinUpgrade19: () => buyCoinUpgrade19,
+    buyCoinUpgrade2: () => buyCoinUpgrade2,
+    buyCoinUpgrade20: () => buyCoinUpgrade20,
+    buyCoinUpgrade21: () => buyCoinUpgrade21,
+    buyCoinUpgrade22: () => buyCoinUpgrade22,
+    buyCoinUpgrade23: () => buyCoinUpgrade23,
+    buyCoinUpgrade24: () => buyCoinUpgrade24,
+    buyCoinUpgrade25: () => buyCoinUpgrade25,
+    buyCoinUpgrade3: () => buyCoinUpgrade3,
+    buyCoinUpgrade4: () => buyCoinUpgrade4,
+    buyCoinUpgrade5: () => buyCoinUpgrade5,
+    buyCoinUpgrade6: () => buyCoinUpgrade6,
+    buyCoinUpgrade7: () => buyCoinUpgrade7,
+    buyCoinUpgrade8: () => buyCoinUpgrade8,
+    buyCoinUpgrade9: () => buyCoinUpgrade9,
     buyDiamondUpgrade1: () => buyDiamondUpgrade1,
     buyDiamondUpgrade2: () => buyDiamondUpgrade2,
     buyDiamondUpgrade3: () => buyDiamondUpgrade3,
@@ -70,6 +95,7 @@ var macroCmds = (() => {
     getAutoPrestigeMode: () => getAutoPrestigeMode,
     getAutoTessBuyMode: () => getAutoTessBuyMode,
     getAutoTranscendMode: () => getAutoTranscendMode,
+    getAutoUpgraderStatus: () => getAutoUpgraderStatus,
     isAccelBoostBuyable: () => isAccelBoostBuyable,
     isAccelBuyable: () => isAccelBuyable,
     isAlchemiesBuyable: () => isAlchemiesBuyable,
@@ -82,6 +108,31 @@ var macroCmds = (() => {
     isCoalPlantBuyable: () => isCoalPlantBuyable,
     isCoalRigBuyable: () => isCoalRigBuyable,
     isCoinMintBuyable: () => isCoinMintBuyable,
+    isCoinUpgrade10Buyable: () => isCoinUpgrade10Buyable,
+    isCoinUpgrade11Buyable: () => isCoinUpgrade11Buyable,
+    isCoinUpgrade12Buyable: () => isCoinUpgrade12Buyable,
+    isCoinUpgrade13Buyable: () => isCoinUpgrade13Buyable,
+    isCoinUpgrade14Buyable: () => isCoinUpgrade14Buyable,
+    isCoinUpgrade15Buyable: () => isCoinUpgrade15Buyable,
+    isCoinUpgrade16Buyable: () => isCoinUpgrade16Buyable,
+    isCoinUpgrade17Buyable: () => isCoinUpgrade17Buyable,
+    isCoinUpgrade18Buyable: () => isCoinUpgrade18Buyable,
+    isCoinUpgrade19Buyable: () => isCoinUpgrade19Buyable,
+    isCoinUpgrade1Buyable: () => isCoinUpgrade1Buyable,
+    isCoinUpgrade20Buyable: () => isCoinUpgrade20Buyable,
+    isCoinUpgrade21Buyable: () => isCoinUpgrade21Buyable,
+    isCoinUpgrade22Buyable: () => isCoinUpgrade22Buyable,
+    isCoinUpgrade23Buyable: () => isCoinUpgrade23Buyable,
+    isCoinUpgrade24Buyable: () => isCoinUpgrade24Buyable,
+    isCoinUpgrade25Buyable: () => isCoinUpgrade25Buyable,
+    isCoinUpgrade2Buyable: () => isCoinUpgrade2Buyable,
+    isCoinUpgrade3Buyable: () => isCoinUpgrade3Buyable,
+    isCoinUpgrade4Buyable: () => isCoinUpgrade4Buyable,
+    isCoinUpgrade5Buyable: () => isCoinUpgrade5Buyable,
+    isCoinUpgrade6Buyable: () => isCoinUpgrade6Buyable,
+    isCoinUpgrade7Buyable: () => isCoinUpgrade7Buyable,
+    isCoinUpgrade8Buyable: () => isCoinUpgrade8Buyable,
+    isCoinUpgrade9Buyable: () => isCoinUpgrade9Buyable,
     isConstantUpgrade10Bought: () => isConstantUpgrade10Bought,
     isConstantUpgrade1Automated: () => isConstantUpgrade1Automated,
     isConstantUpgrade2Automated: () => isConstantUpgrade2Automated,
@@ -163,7 +214,8 @@ var macroCmds = (() => {
     toggleAutobuyThreeSpace: () => toggleAutobuyThreeSpace,
     toggleAutobuyVector: () => toggleAutobuyVector,
     toggleAutobuyWizards: () => toggleAutobuyWizards,
-    toggleAutobuyWorker: () => toggleAutobuyWorker
+    toggleAutobuyWorker: () => toggleAutobuyWorker,
+    toggleCoinUpgradeAutoBuy: () => toggleCoinUpgradeAutoBuy
   });
 
   // src/utils.ts
@@ -188,17 +240,31 @@ var macroCmds = (() => {
       return false;
     }
   }
-  function makeCheckIfAvalible(id) {
-    return function() {
-      let res = checkClassList(id, "buildingPurchaseBtnAvailable");
-      if (res === 0) {
-        return 0;
-      } else if (res) {
-        return true;
-      } else {
-        return false;
-      }
-    };
+  function makeCheckIfAvalible(id, type) {
+    switch (type) {
+      case 0 /* Bulding */:
+        return function() {
+          let res = checkClassList(id, "buildingPurchaseBtnAvailable");
+          if (res === 0) {
+            return 0;
+          } else if (res) {
+            return true;
+          } else {
+            return false;
+          }
+        };
+      case 1 /* Upgrade */:
+        return function() {
+          let res = checkClassList(id, "green-background");
+          if (res === 0) {
+            return 0;
+          } else if (res) {
+            return true;
+          } else {
+            return false;
+          }
+        };
+    }
   }
   function makeCheckIfAutomated(id, layer) {
     switch (layer) {
@@ -252,13 +318,13 @@ var macroCmds = (() => {
   var buyAccel = makeClicker(accelId, "Accelorator");
   var buyMult = makeClicker(multId, "Multplier");
   var buyAccelBoost = makeClicker(accelBoostId, "Accel. Boost");
-  var isWorkerBuyable = makeCheckIfAvalible(workerId);
-  var isInvestmentBuyable = makeCheckIfAvalible(investmentId);
-  var isPrinterBuyable = makeCheckIfAvalible(printerId);
-  var isCoinMintBuyable = makeCheckIfAvalible(coinMintId);
-  var isAlchemiesBuyable = makeCheckIfAvalible(alchemiesId);
-  var isAccelBuyable = makeCheckIfAvalible(accelId);
-  var isMultBuyable = makeCheckIfAvalible(multId);
+  var isWorkerBuyable = makeCheckIfAvalible(workerId, 0 /* Bulding */);
+  var isInvestmentBuyable = makeCheckIfAvalible(investmentId, 0 /* Bulding */);
+  var isPrinterBuyable = makeCheckIfAvalible(printerId, 0 /* Bulding */);
+  var isCoinMintBuyable = makeCheckIfAvalible(coinMintId, 0 /* Bulding */);
+  var isAlchemiesBuyable = makeCheckIfAvalible(alchemiesId, 0 /* Bulding */);
+  var isAccelBuyable = makeCheckIfAvalible(accelId, 0 /* Bulding */);
+  var isMultBuyable = makeCheckIfAvalible(multId, 0 /* Bulding */);
   var isAccelBoostBuyable = makeClicker(accelBoostId, "Accel. Boost");
   var toggleAutobuyWorker = makeClicker("toggle1", "Auto Worker");
   var toggleAutobuyInvestment = makeClicker("toggle2", "Auto Investment");
@@ -330,11 +396,11 @@ var macroCmds = (() => {
   var buyCoalRig = makeClicker("buydiamond3", "Coal Rig");
   var buyPikaxe = makeClicker("buydiamond4", "Pikaxe");
   var buyPandorasBox = makeClicker("buydiamond5", "Pandoras Box");
-  var isRefineryBuyable = makeCheckIfAvalible("buydiamond1");
-  var isCoalPlantBuyable = makeCheckIfAvalible("buydiamond2");
-  var isCoalRigBuyable = makeCheckIfAvalible("buydiamond3");
-  var isPikaxeBuyable = makeCheckIfAvalible("buydiamond4");
-  var isPandorasBoxBuyable = makeCheckIfAvalible("buydiamond5");
+  var isRefineryBuyable = makeCheckIfAvalible("buydiamond1", 0 /* Bulding */);
+  var isCoalPlantBuyable = makeCheckIfAvalible("buydiamond2", 0 /* Bulding */);
+  var isCoalRigBuyable = makeCheckIfAvalible("buydiamond3", 0 /* Bulding */);
+  var isPikaxeBuyable = makeCheckIfAvalible("buydiamond4", 0 /* Bulding */);
+  var isPandorasBoxBuyable = makeCheckIfAvalible("buydiamond5", 0 /* Bulding */);
   var buyDiamondUpgrade1 = makeClicker("buycrystalupgrade1", "Diamond Upgrade 1");
   var buyDiamondUpgrade2 = makeClicker("buycrystalupgrade2", "Diamond Upgrade 2");
   var buyDiamondUpgrade3 = makeClicker("buycrystalupgrade3", "Diamond Upgrade 3");
@@ -433,19 +499,19 @@ var macroCmds = (() => {
 
   // src/buildings/mythos.ts
   var buyAugments = makeClicker("buymythos1", "Augments");
-  var isAugmentsBuyable = makeCheckIfAvalible("buymythos1");
+  var isAugmentsBuyable = makeCheckIfAvalible("buymythos1", 0 /* Bulding */);
   var toggleAutobuyAugments = makeClicker("toggle16", "Augments Auto Buy");
   var buyEnchantments = makeClicker("buymythos2", "Enchantments");
-  var isEnchantmentsBuyable = makeCheckIfAvalible("buymythos2");
+  var isEnchantmentsBuyable = makeCheckIfAvalible("buymythos2", 0 /* Bulding */);
   var toggleAutobuyEnchantments = makeClicker("toggle17", "Enchantmants Auto Buy");
   var buyWizards = makeClicker("buymythos3", "Wizards");
-  var isWizardsBuyable = makeCheckIfAvalible("buymythos3");
+  var isWizardsBuyable = makeCheckIfAvalible("buymythos3", 0 /* Bulding */);
   var toggleAutobuyWizards = makeClicker("toggle18", "Wizards Auto Buy");
   var buyOracles = makeClicker("buymythos4", "Oracles");
-  var isOraclesBuyable = makeCheckIfAvalible("buymythos4");
+  var isOraclesBuyable = makeCheckIfAvalible("buymythos4", 0 /* Bulding */);
   var togglAutobuyeOracles = makeClicker("toggle19", "Oracles Auto Buy");
   var buyGrandmasters = makeClicker("buymythos5", "Grandmasters");
-  var isGrandmastersBuyable = makeCheckIfAvalible("buymythos5");
+  var isGrandmastersBuyable = makeCheckIfAvalible("buymythos5", 0 /* Bulding */);
   var toggleAutobuyGrandmasters = makeClicker("toggle20", "Grandmasters Auto Buy");
   var setAutoTranscend = makeSetAuto("transcendamount", "Auto Transcend");
   var toggleAutoTranscend = makeClicker("toggle21", "Toggle Auto Transcend");
@@ -530,19 +596,19 @@ var macroCmds = (() => {
 
   // src/buildings/reincarnate.ts
   var buyProton = makeClicker("buyparticles1", "Proton");
-  var isProtonbuyable = makeCheckIfAvalible("buyparticles1");
+  var isProtonbuyable = makeCheckIfAvalible("buyparticles1", 0 /* Bulding */);
   var toggleAutobuyProton = makeClicker("toggle22", "Proton Auto Buy");
   var buyElement = makeClicker("buyparticles2", "Element");
-  var isElementbuyable = makeCheckIfAvalible("buyparticles2");
+  var isElementbuyable = makeCheckIfAvalible("buyparticles2", 0 /* Bulding */);
   var toggleAutobuyElement = makeClicker("toggle23", "Element Auto Buy");
   var buyPulsar = makeClicker("buyparticles3", "Pulsars");
-  var isPulsarbuyable = makeCheckIfAvalible("buyparticles3");
+  var isPulsarbuyable = makeCheckIfAvalible("buyparticles3", 0 /* Bulding */);
   var toggleAutobuyPulsar = makeClicker("toggle24", "Pulsar Auto Buy");
   var buyQuasar = makeClicker("buyparticles4", "Quarsars");
-  var isQuasarbuyable = makeCheckIfAvalible("buyparticles4");
+  var isQuasarbuyable = makeCheckIfAvalible("buyparticles4", 0 /* Bulding */);
   var toggleAutobuyQuasar = makeClicker("toggle25", "Quasar Auto Buy");
   var buyGalacticNuclei = makeClicker("buyparticles5", "Galactic Nuclei");
-  var isGalacticNucleibuyable = makeCheckIfAvalible("buyparticles5");
+  var isGalacticNucleibuyable = makeCheckIfAvalible("buyparticles5", 0 /* Bulding */);
   var toggleAutobuyGalacticNuclei = makeClicker("toggle26", "Galactic Nuclei Auto Buy");
   var setAutoParticle = makeSetAuto("reincarnationamount", "Auto Reincarnate");
   var toggleAutoParticle = makeClicker("toggle27", "Toggle Auto Reincarnate");
@@ -627,19 +693,19 @@ var macroCmds = (() => {
 
   // src/buildings/ascend.ts
   var buyDot = makeClicker("buyTesseracts1", "Dot");
-  var isDotbuyable = makeCheckIfAvalible("buyTesseracts1");
+  var isDotbuyable = makeCheckIfAvalible("buyTesseracts1", 0 /* Bulding */);
   var toggleAutobuyDot = makeClicker("tesseractAutoToggle1", "Auto Buy Dot");
   var buyVector = makeClicker("buyTesseracts2", "Vector");
-  var isVectorbuyable = makeCheckIfAvalible("buyTesseracts2");
+  var isVectorbuyable = makeCheckIfAvalible("buyTesseracts2", 0 /* Bulding */);
   var toggleAutobuyVector = makeClicker("tesseractAutoToggle2", "Auto Buy Vector");
   var buyThreeSpace = makeClicker("buyTesseracts3", "Three-Space");
-  var isThreeSpacebuyable = makeCheckIfAvalible("buyTesseracts3");
+  var isThreeSpacebuyable = makeCheckIfAvalible("buyTesseracts3", 0 /* Bulding */);
   var toggleAutobuyThreeSpace = makeClicker("tesseractAutoToggle3", "Auto Buy Three-Space");
   var buyBentTime = makeClicker("buyTesseracts4", "Bent Time");
-  var isBentTimebuyable = makeCheckIfAvalible("buyTesseracts4");
+  var isBentTimebuyable = makeCheckIfAvalible("buyTesseracts4", 0 /* Bulding */);
   var toggleAutobuyBentTime = makeClicker("tesseractAutoToggle4", "Auto Buy Bent Time");
   var buyHilbertSpace = makeClicker("buyTesseracts5", "Hilbert Space");
-  var isHilbertSpacebuyable = makeCheckIfAvalible("buyTesseracts5");
+  var isHilbertSpacebuyable = makeCheckIfAvalible("buyTesseracts5", 0 /* Bulding */);
   var toggleAutobuyHilbertSpace = makeClicker("tesseractAutoToggle5", "Auto Buy Hilbert Space");
   var setAutoBuyTess = makeSetAuto("tesseractAmount", "Auto Buy Tess");
   var toggleAutoBuyTess = makeClicker("tesseractautobuytoggle", "Toggle Auto Reincarnate");
@@ -742,6 +808,70 @@ var macroCmds = (() => {
     }
   }
 
+  // src/upgrades/coin.ts
+  var buyCoinUpgrade1 = makeClicker("upg1", "Coin Upgrade 1");
+  var isCoinUpgrade1Buyable = makeCheckIfAvalible("upg1", 1 /* Upgrade */);
+  var buyCoinUpgrade2 = makeClicker("upg2", "Coin Upgrade 2");
+  var isCoinUpgrade2Buyable = makeCheckIfAvalible("upg2", 1 /* Upgrade */);
+  var buyCoinUpgrade3 = makeClicker("upg3", "Coin Upgrade 3");
+  var isCoinUpgrade3Buyable = makeCheckIfAvalible("upg3", 1 /* Upgrade */);
+  var buyCoinUpgrade4 = makeClicker("upg4", "Coin Upgrade 4");
+  var isCoinUpgrade4Buyable = makeCheckIfAvalible("upg4", 1 /* Upgrade */);
+  var buyCoinUpgrade5 = makeClicker("upg5", "Coin Upgrade 5");
+  var isCoinUpgrade5Buyable = makeCheckIfAvalible("upg5", 1 /* Upgrade */);
+  var buyCoinUpgrade6 = makeClicker("upg6", "Coin Upgrade 6");
+  var isCoinUpgrade6Buyable = makeCheckIfAvalible("upg6", 1 /* Upgrade */);
+  var buyCoinUpgrade7 = makeClicker("upg7", "Coin Upgrade 7");
+  var isCoinUpgrade7Buyable = makeCheckIfAvalible("upg7", 1 /* Upgrade */);
+  var buyCoinUpgrade8 = makeClicker("upg8", "Coin Upgrade 8");
+  var isCoinUpgrade8Buyable = makeCheckIfAvalible("upg8", 1 /* Upgrade */);
+  var buyCoinUpgrade9 = makeClicker("upg9", "Coin Upgrade 9");
+  var isCoinUpgrade9Buyable = makeCheckIfAvalible("upg9", 1 /* Upgrade */);
+  var buyCoinUpgrade10 = makeClicker("upg10", "Coin Upgrade 10");
+  var isCoinUpgrade10Buyable = makeCheckIfAvalible("upg10", 1 /* Upgrade */);
+  var buyCoinUpgrade11 = makeClicker("upg11", "Coin Upgrade 11");
+  var isCoinUpgrade11Buyable = makeCheckIfAvalible("upg10", 1 /* Upgrade */);
+  var buyCoinUpgrade12 = makeClicker("upg12", "Coin Upgrade 12");
+  var isCoinUpgrade12Buyable = makeCheckIfAvalible("upg11", 1 /* Upgrade */);
+  var buyCoinUpgrade13 = makeClicker("upg13", "Coin Upgrade 13");
+  var isCoinUpgrade13Buyable = makeCheckIfAvalible("upg12", 1 /* Upgrade */);
+  var buyCoinUpgrade14 = makeClicker("upg14", "Coin Upgrade 14");
+  var isCoinUpgrade14Buyable = makeCheckIfAvalible("upg13", 1 /* Upgrade */);
+  var buyCoinUpgrade15 = makeClicker("upg15", "Coin Upgrade 15");
+  var isCoinUpgrade15Buyable = makeCheckIfAvalible("upg14", 1 /* Upgrade */);
+  var buyCoinUpgrade16 = makeClicker("upg16", "Coin Upgrade 16");
+  var isCoinUpgrade16Buyable = makeCheckIfAvalible("upg15", 1 /* Upgrade */);
+  var buyCoinUpgrade17 = makeClicker("upg17", "Coin Upgrade 17");
+  var isCoinUpgrade17Buyable = makeCheckIfAvalible("upg16", 1 /* Upgrade */);
+  var buyCoinUpgrade18 = makeClicker("upg18", "Coin Upgrade 18");
+  var isCoinUpgrade18Buyable = makeCheckIfAvalible("upg17", 1 /* Upgrade */);
+  var buyCoinUpgrade19 = makeClicker("upg19", "Coin Upgrade 19");
+  var isCoinUpgrade19Buyable = makeCheckIfAvalible("upg18", 1 /* Upgrade */);
+  var buyCoinUpgrade20 = makeClicker("upg20", "Coin Upgrade 20");
+  var isCoinUpgrade20Buyable = makeCheckIfAvalible("upg19", 1 /* Upgrade */);
+  var buyCoinUpgrade21 = makeClicker("upg121", "Coin Upgrade 21");
+  var isCoinUpgrade21Buyable = makeCheckIfAvalible("upg121", 1 /* Upgrade */);
+  var buyCoinUpgrade22 = makeClicker("upg122", "Coin Upgrade 22");
+  var isCoinUpgrade22Buyable = makeCheckIfAvalible("upg122", 1 /* Upgrade */);
+  var buyCoinUpgrade23 = makeClicker("upg123", "Coin Upgrade 23");
+  var isCoinUpgrade23Buyable = makeCheckIfAvalible("upg123", 1 /* Upgrade */);
+  var buyCoinUpgrade24 = makeClicker("upg124", "Coin Upgrade 24");
+  var isCoinUpgrade24Buyable = makeCheckIfAvalible("upg124", 1 /* Upgrade */);
+  var buyCoinUpgrade25 = makeClicker("upg125", "Coin Upgrade 25");
+  var isCoinUpgrade25Buyable = makeCheckIfAvalible("upg125", 1 /* Upgrade */);
+  var toggleCoinUpgradeAutoBuy = makeClicker("coinAutoUpgrade", "Coin Auto Upgrade");
+  function getAutoUpgraderStatus() {
+    let id = document.getElementById("coinAutoUpgrade");
+    if (!id) {
+      console.error(`Cannot find the coin auto upgrade button, or somethings is worng: ${id}`);
+      return 0;
+    } else if ((id == null ? void 0 : id.style.borderColor) === "red") {
+      return false;
+    } else if ((id == null ? void 0 : id.style.borderColor) === "green") {
+      return true;
+    }
+  }
+
   // src/buyQuants.ts
   var coinBuyQuant = {
     one: "coinone",
@@ -774,6 +904,14 @@ var macroCmds = (() => {
     onek: "particlethousand",
     tenk: "particle10k",
     hunderedk: "particle100k"
+  };
+  var ascendBuyQuant = {
+    one: "tesseractone",
+    ten: "tesseractten",
+    hundered: "tesseracthundred",
+    onek: "tesseractthousand",
+    tenk: "tesseract10k",
+    hunderedk: "tesseract100k"
   };
   return __toCommonJS(index_exports);
 })();

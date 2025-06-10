@@ -1,4 +1,4 @@
-import { makeClicker, makeCheckIfAvalible } from "../utils"
+import { makeClicker, makeCheckIfAvalible, Type } from "../utils"
 
 type buyCoinQuant = "coinone" | "cointen" | "coinhundred" | "cointhousand" | "coin10k" | "coin100k";
 
@@ -20,13 +20,13 @@ export let buyAlchemies = makeClicker(alchemiesId, "Alchemy");
 export let buyAccel = makeClicker(accelId, "Accelorator");
 export let buyMult = makeClicker(multId, "Multplier");
 export let buyAccelBoost = makeClicker(accelBoostId, "Accel. Boost");
-export let isWorkerBuyable = makeCheckIfAvalible(workerId);
-export let isInvestmentBuyable = makeCheckIfAvalible(investmentId);
-export let isPrinterBuyable = makeCheckIfAvalible(printerId);
-export let isCoinMintBuyable = makeCheckIfAvalible(coinMintId);
-export let isAlchemiesBuyable = makeCheckIfAvalible(alchemiesId);
-export let isAccelBuyable = makeCheckIfAvalible(accelId);
-export let isMultBuyable = makeCheckIfAvalible(multId);
+export let isWorkerBuyable = makeCheckIfAvalible(workerId, Type.Bulding);
+export let isInvestmentBuyable = makeCheckIfAvalible(investmentId, Type.Bulding);
+export let isPrinterBuyable = makeCheckIfAvalible(printerId, Type.Bulding);
+export let isCoinMintBuyable = makeCheckIfAvalible(coinMintId, Type.Bulding);
+export let isAlchemiesBuyable = makeCheckIfAvalible(alchemiesId, Type.Bulding);
+export let isAccelBuyable = makeCheckIfAvalible(accelId, Type.Bulding);
+export let isMultBuyable = makeCheckIfAvalible(multId, Type.Bulding);
 export let isAccelBoostBuyable = makeClicker(accelBoostId, "Accel. Boost");
 export let toggleAutobuyWorker = makeClicker("toggle1", "Auto Worker");
 export let toggleAutobuyInvestment = makeClicker("toggle2", "Auto Investment");

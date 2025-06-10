@@ -1,21 +1,21 @@
-import {makeClicker, makeCheckIfAvalible, makeSetAuto} from "../utils"
+import {makeClicker, makeCheckIfAvalible, makeSetAuto, Type} from "../utils"
 
 type buyQuant = "mythosone" | "mythosten" | "mythoshundred" | "mythosthousand" | "mythos10k" | "mythos100k";
 
 export let buyAugments = makeClicker("buymythos1", "Augments");
-export let isAugmentsBuyable = makeCheckIfAvalible("buymythos1");
+export let isAugmentsBuyable = makeCheckIfAvalible("buymythos1", Type.Bulding);
 export let toggleAutobuyAugments = makeClicker("toggle16", "Augments Auto Buy");
 export let buyEnchantments = makeClicker("buymythos2", "Enchantments");
-export let isEnchantmentsBuyable = makeCheckIfAvalible("buymythos2");
+export let isEnchantmentsBuyable = makeCheckIfAvalible("buymythos2", Type.Bulding);
 export let toggleAutobuyEnchantments = makeClicker("toggle17", "Enchantmants Auto Buy");
 export let buyWizards = makeClicker("buymythos3", "Wizards");
-export let isWizardsBuyable = makeCheckIfAvalible("buymythos3");
+export let isWizardsBuyable = makeCheckIfAvalible("buymythos3", Type.Bulding);
 export let toggleAutobuyWizards = makeClicker("toggle18", "Wizards Auto Buy");
 export let buyOracles = makeClicker("buymythos4", "Oracles");
-export let isOraclesBuyable = makeCheckIfAvalible("buymythos4");
+export let isOraclesBuyable = makeCheckIfAvalible("buymythos4", Type.Bulding);
 export let togglAutobuyeOracles = makeClicker("toggle19", "Oracles Auto Buy");
 export let buyGrandmasters = makeClicker("buymythos5", "Grandmasters");
-export let isGrandmastersBuyable = makeCheckIfAvalible("buymythos5");
+export let isGrandmastersBuyable = makeCheckIfAvalible("buymythos5", Type.Bulding);
 export let toggleAutobuyGrandmasters = makeClicker("toggle20", "Grandmasters Auto Buy");
 export let setAutoTranscend = makeSetAuto("transcendamount", "Auto Transcend");
 export let toggleAutoTranscend = makeClicker("toggle21", "Toggle Auto Transcend");

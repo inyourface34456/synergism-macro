@@ -1,4 +1,4 @@
-import {makeClicker, makeCheckIfAvalible, makeSetAuto, makeCheckIfAutomated, Layer} from "../utils"
+import {makeClicker, makeCheckIfAvalible, makeSetAuto, makeCheckIfAutomated, Layer, Type} from "../utils"
 
 type buyQuant = "crystalone" | "crystalten" | "crystalhundred" | "crystalthousand" | "crystal10k" | "crystal100k";
 
@@ -7,11 +7,11 @@ export let buyCoalPlant = makeClicker("buydiamond2", "Coal Plant");
 export let buyCoalRig = makeClicker("buydiamond3", "Coal Rig");
 export let buyPikaxe = makeClicker("buydiamond4", "Pikaxe");
 export let buyPandorasBox = makeClicker("buydiamond5", "Pandoras Box");
-export let isRefineryBuyable = makeCheckIfAvalible("buydiamond1");
-export let isCoalPlantBuyable = makeCheckIfAvalible("buydiamond2");
-export let isCoalRigBuyable = makeCheckIfAvalible("buydiamond3");
-export let isPikaxeBuyable = makeCheckIfAvalible("buydiamond4");
-export let isPandorasBoxBuyable = makeCheckIfAvalible("buydiamond5");
+export let isRefineryBuyable = makeCheckIfAvalible("buydiamond1", Type.Bulding);
+export let isCoalPlantBuyable = makeCheckIfAvalible("buydiamond2", Type.Bulding);
+export let isCoalRigBuyable = makeCheckIfAvalible("buydiamond3", Type.Bulding);
+export let isPikaxeBuyable = makeCheckIfAvalible("buydiamond4", Type.Bulding);
+export let isPandorasBoxBuyable = makeCheckIfAvalible("buydiamond5", Type.Bulding);
 export let buyDiamondUpgrade1 = makeClicker("buycrystalupgrade1", "Diamond Upgrade 1")
 export let buyDiamondUpgrade2 = makeClicker("buycrystalupgrade2", "Diamond Upgrade 2")
 export let buyDiamondUpgrade3 = makeClicker("buycrystalupgrade3", "Diamond Upgrade 3")
