@@ -58,4 +58,12 @@ export {buyMythosUpgrade12, buyMythosUpgrade13, buyMythosUpgrade14, buyMythosUpg
 export {buyMythosUpgrade2, buyMythosUpgrade20, buyMythosUpgrade3, buyMythosUpgrade4, buyMythosUpgrade5, buyMythosUpgrade6, buyMythosUpgrade7, buyMythosUpgrade8} from "./upgrades/mythos"
 export {buyMythosUpgrade9, toggleMythosUpgradeAutoBuy, getMythosAutoUpgraderStatus} from "./upgrades/mythos"
 
+export {isGeneratorUpgrade10Buyable, isGeneratorUpgrade11Buyable, isGeneratorUpgrade12Buyable, isGeneratorUpgrade13Buyable, isGeneratorUpgrade14Buyable} from "./upgrades/genarator"
+export {isGeneratorUpgrade15Buyable, isGeneratorUpgrade16Buyable, isGeneratorUpgrade17Buyable, isGeneratorUpgrade18Buyable, isGeneratorUpgrade19Buyable} from "./upgrades/genarator"
+export {isGeneratorUpgrade1Buyable, isGeneratorUpgrade20Buyable, isGeneratorUpgrade2Buyable, isGeneratorUpgrade3Buyable, isGeneratorUpgrade4Buyable, isGeneratorUpgrade5Buyable} from "./upgrades/genarator"
+export {isGeneratorUpgrade6Buyable, isGeneratorUpgrade7Buyable, isGeneratorUpgrade8Buyable, isGeneratorUpgrade9Buyable, buyGeneratorUpgrade1, buyGeneratorUpgrade10} from "./upgrades/genarator"
+export {buyGeneratorUpgrade11, buyGeneratorUpgrade12, buyGeneratorUpgrade13, buyGeneratorUpgrade14, buyGeneratorUpgrade15, buyGeneratorUpgrade16, buyGeneratorUpgrade17}  from "./upgrades/genarator"
+export {buyGeneratorUpgrade18, buyGeneratorUpgrade19, buyGeneratorUpgrade2, buyGeneratorUpgrade20, buyGeneratorUpgrade3, buyGeneratorUpgrade4, buyGeneratorUpgrade5} from "./upgrades/genarator"
+export {buyGeneratorUpgrade6, buyGeneratorUpgrade7, buyGeneratorUpgrade8, buyGeneratorUpgrade9, toggleGeneratorUpgradeAutoBuy, getGeneratorAutoUpgraderStatus} from "./upgrades/genarator"
+
 export {coinBuyQuant, diamondBuyQuant, mythosBuyQuant, reincarnateBuyQuant, ascendBuyQuant} from "./buyQuants"

@@ -78,6 +78,26 @@ var macroCmds = (() => {
     buyElement: () => buyElement,
     buyEnchantments: () => buyEnchantments,
     buyGalacticNuclei: () => buyGalacticNuclei,
+    buyGeneratorUpgrade1: () => buyGeneratorUpgrade1,
+    buyGeneratorUpgrade10: () => buyGeneratorUpgrade10,
+    buyGeneratorUpgrade11: () => buyGeneratorUpgrade11,
+    buyGeneratorUpgrade12: () => buyGeneratorUpgrade12,
+    buyGeneratorUpgrade13: () => buyGeneratorUpgrade13,
+    buyGeneratorUpgrade14: () => buyGeneratorUpgrade14,
+    buyGeneratorUpgrade15: () => buyGeneratorUpgrade15,
+    buyGeneratorUpgrade16: () => buyGeneratorUpgrade16,
+    buyGeneratorUpgrade17: () => buyGeneratorUpgrade17,
+    buyGeneratorUpgrade18: () => buyGeneratorUpgrade18,
+    buyGeneratorUpgrade19: () => buyGeneratorUpgrade19,
+    buyGeneratorUpgrade2: () => buyGeneratorUpgrade2,
+    buyGeneratorUpgrade20: () => buyGeneratorUpgrade20,
+    buyGeneratorUpgrade3: () => buyGeneratorUpgrade3,
+    buyGeneratorUpgrade4: () => buyGeneratorUpgrade4,
+    buyGeneratorUpgrade5: () => buyGeneratorUpgrade5,
+    buyGeneratorUpgrade6: () => buyGeneratorUpgrade6,
+    buyGeneratorUpgrade7: () => buyGeneratorUpgrade7,
+    buyGeneratorUpgrade8: () => buyGeneratorUpgrade8,
+    buyGeneratorUpgrade9: () => buyGeneratorUpgrade9,
     buyGrandmasters: () => buyGrandmasters,
     buyHilbertSpace: () => buyHilbertSpace,
     buyInvestment: () => buyInvestment,
@@ -137,6 +157,7 @@ var macroCmds = (() => {
     getAutoTranscendMode: () => getAutoTranscendMode,
     getCoinAutoUpgraderStatus: () => getCoinAutoUpgraderStatus,
     getDiamondAutoUpgraderStatus: () => getDiamondAutoUpgraderStatus,
+    getGeneratorAutoUpgraderStatus: () => getGeneratorAutoUpgraderStatus,
     getMythosAutoUpgraderStatus: () => getMythosAutoUpgraderStatus,
     isAccelBoostBuyable: () => isAccelBoostBuyable,
     isAccelBuyable: () => isAccelBuyable,
@@ -209,6 +230,26 @@ var macroCmds = (() => {
     isElementbuyable: () => isElementbuyable,
     isEnchantmentsBuyable: () => isEnchantmentsBuyable,
     isGalacticNucleibuyable: () => isGalacticNucleibuyable,
+    isGeneratorUpgrade10Buyable: () => isGeneratorUpgrade10Buyable,
+    isGeneratorUpgrade11Buyable: () => isGeneratorUpgrade11Buyable,
+    isGeneratorUpgrade12Buyable: () => isGeneratorUpgrade12Buyable,
+    isGeneratorUpgrade13Buyable: () => isGeneratorUpgrade13Buyable,
+    isGeneratorUpgrade14Buyable: () => isGeneratorUpgrade14Buyable,
+    isGeneratorUpgrade15Buyable: () => isGeneratorUpgrade15Buyable,
+    isGeneratorUpgrade16Buyable: () => isGeneratorUpgrade16Buyable,
+    isGeneratorUpgrade17Buyable: () => isGeneratorUpgrade17Buyable,
+    isGeneratorUpgrade18Buyable: () => isGeneratorUpgrade18Buyable,
+    isGeneratorUpgrade19Buyable: () => isGeneratorUpgrade19Buyable,
+    isGeneratorUpgrade1Buyable: () => isGeneratorUpgrade1Buyable,
+    isGeneratorUpgrade20Buyable: () => isGeneratorUpgrade20Buyable,
+    isGeneratorUpgrade2Buyable: () => isGeneratorUpgrade2Buyable,
+    isGeneratorUpgrade3Buyable: () => isGeneratorUpgrade3Buyable,
+    isGeneratorUpgrade4Buyable: () => isGeneratorUpgrade4Buyable,
+    isGeneratorUpgrade5Buyable: () => isGeneratorUpgrade5Buyable,
+    isGeneratorUpgrade6Buyable: () => isGeneratorUpgrade6Buyable,
+    isGeneratorUpgrade7Buyable: () => isGeneratorUpgrade7Buyable,
+    isGeneratorUpgrade8Buyable: () => isGeneratorUpgrade8Buyable,
+    isGeneratorUpgrade9Buyable: () => isGeneratorUpgrade9Buyable,
     isGrandmastersBuyable: () => isGrandmastersBuyable,
     isHilbertSpacebuyable: () => isHilbertSpacebuyable,
     isInvestmentBuyable: () => isInvestmentBuyable,
@@ -299,6 +340,7 @@ var macroCmds = (() => {
     toggleAutobuyWorker: () => toggleAutobuyWorker,
     toggleCoinUpgradeAutoBuy: () => toggleCoinUpgradeAutoBuy,
     toggleDiamondUpgradeAutoBuy: () => toggleDiamondUpgradeAutoBuy,
+    toggleGeneratorUpgradeAutoBuy: () => toggleGeneratorUpgradeAutoBuy,
     toggleMythosUpgradeAutoBuy: () => toggleMythosUpgradeAutoBuy
   });
 
@@ -1056,6 +1098,60 @@ var macroCmds = (() => {
     let id = document.getElementById("transcendAutoUpgrade");
     if (!id) {
       console.error(`Cannot find the Mythos auto upgrade button, or somethings is worng: ${id}`);
+      return 0;
+    } else if ((id == null ? void 0 : id.style.borderColor) === "red") {
+      return false;
+    } else if ((id == null ? void 0 : id.style.borderColor) === "green") {
+      return true;
+    }
+  }
+
+  // src/upgrades/genarator.ts
+  var buyGeneratorUpgrade1 = makeClicker("upg101", "Generator Upgrade 1");
+  var isGeneratorUpgrade1Buyable = makeCheckIfAvalible("upg101", 1 /* Upgrade */);
+  var buyGeneratorUpgrade2 = makeClicker("upg102", "Generator Upgrade 2");
+  var isGeneratorUpgrade2Buyable = makeCheckIfAvalible("upg102", 1 /* Upgrade */);
+  var buyGeneratorUpgrade3 = makeClicker("upg103", "Generator Upgrade 3");
+  var isGeneratorUpgrade3Buyable = makeCheckIfAvalible("upg103", 1 /* Upgrade */);
+  var buyGeneratorUpgrade4 = makeClicker("upg104", "Generator Upgrade 4");
+  var isGeneratorUpgrade4Buyable = makeCheckIfAvalible("upg104", 1 /* Upgrade */);
+  var buyGeneratorUpgrade5 = makeClicker("upg105", "Generator Upgrade 5");
+  var isGeneratorUpgrade5Buyable = makeCheckIfAvalible("upg105", 1 /* Upgrade */);
+  var buyGeneratorUpgrade6 = makeClicker("upg106", "Generator Upgrade 6");
+  var isGeneratorUpgrade6Buyable = makeCheckIfAvalible("upg106", 1 /* Upgrade */);
+  var buyGeneratorUpgrade7 = makeClicker("upg107", "Generator Upgrade 7");
+  var isGeneratorUpgrade7Buyable = makeCheckIfAvalible("upg107", 1 /* Upgrade */);
+  var buyGeneratorUpgrade8 = makeClicker("upg108", "Generator Upgrade 8");
+  var isGeneratorUpgrade8Buyable = makeCheckIfAvalible("upg108", 1 /* Upgrade */);
+  var buyGeneratorUpgrade9 = makeClicker("upg109", "Generator Upgrade 9");
+  var isGeneratorUpgrade9Buyable = makeCheckIfAvalible("upg109", 1 /* Upgrade */);
+  var buyGeneratorUpgrade10 = makeClicker("upg110", "Generator Upgrade 10");
+  var isGeneratorUpgrade10Buyable = makeCheckIfAvalible("upg110", 1 /* Upgrade */);
+  var buyGeneratorUpgrade11 = makeClicker("upg111", "Generator Upgrade 11");
+  var isGeneratorUpgrade11Buyable = makeCheckIfAvalible("upg111", 1 /* Upgrade */);
+  var buyGeneratorUpgrade12 = makeClicker("upg112", "Generator Upgrade 12");
+  var isGeneratorUpgrade12Buyable = makeCheckIfAvalible("upg112", 1 /* Upgrade */);
+  var buyGeneratorUpgrade13 = makeClicker("upg113", "Generator Upgrade 13");
+  var isGeneratorUpgrade13Buyable = makeCheckIfAvalible("upg113", 1 /* Upgrade */);
+  var buyGeneratorUpgrade14 = makeClicker("upg114", "Generator Upgrade 14");
+  var isGeneratorUpgrade14Buyable = makeCheckIfAvalible("upg114", 1 /* Upgrade */);
+  var buyGeneratorUpgrade15 = makeClicker("upg115", "Generator Upgrade 15");
+  var isGeneratorUpgrade15Buyable = makeCheckIfAvalible("upg115", 1 /* Upgrade */);
+  var buyGeneratorUpgrade16 = makeClicker("upg116", "Generator Upgrade 16");
+  var isGeneratorUpgrade16Buyable = makeCheckIfAvalible("upg116", 1 /* Upgrade */);
+  var buyGeneratorUpgrade17 = makeClicker("upg117", "Generator Upgrade 17");
+  var isGeneratorUpgrade17Buyable = makeCheckIfAvalible("upg117", 1 /* Upgrade */);
+  var buyGeneratorUpgrade18 = makeClicker("upg118", "Generator Upgrade 18");
+  var isGeneratorUpgrade18Buyable = makeCheckIfAvalible("upg118", 1 /* Upgrade */);
+  var buyGeneratorUpgrade19 = makeClicker("upg119", "Generator Upgrade 19");
+  var isGeneratorUpgrade19Buyable = makeCheckIfAvalible("upg119", 1 /* Upgrade */);
+  var buyGeneratorUpgrade20 = makeClicker("upg120", "Generator Upgrade 20");
+  var isGeneratorUpgrade20Buyable = makeCheckIfAvalible("upg120", 1 /* Upgrade */);
+  var toggleGeneratorUpgradeAutoBuy = makeClicker("generatorsAutoUpgrade", "Generator Auto Upgrade");
+  function getGeneratorAutoUpgraderStatus() {
+    let id = document.getElementById("generatorsAutoUpgrade");
+    if (!id) {
+      console.error(`Cannot find the Generator auto upgrade button, or somethings is worng: ${id}`);
       return 0;
     } else if ((id == null ? void 0 : id.style.borderColor) === "red") {
       return false;
