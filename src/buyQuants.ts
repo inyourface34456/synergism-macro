@@ -42,3 +42,12 @@ export let ascendBuyQuant = {
     tenk: "tesseract10k",
     hunderedk: "tesseract100k"
 };
+
+export let offeringBuyQuant  = {
+    one: "offeringone",
+    ten: "offeringten",
+    hundered: "offeringhundred",
+    onek: "offeringthousand",
+    tenk: "offering10k",
+    hunderedk: "offering100k"
+}

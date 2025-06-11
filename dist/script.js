@@ -377,7 +377,15 @@ var macroCmds = (() => {
     isWizardsBuyable: () => isWizardsBuyable,
     isWorkerBuyable: () => isWorkerBuyable,
     mythosBuyQuant: () => mythosBuyQuant,
+    offeringBuyQuant: () => offeringBuyQuant,
     reincarnateBuyQuant: () => reincarnateBuyQuant,
+    sacAAGRune: () => sacAAGRune,
+    sacDuplicationRune: () => sacDuplicationRune,
+    sacIARune: () => sacIARune,
+    sacPrismRune: () => sacPrismRune,
+    sacSIRune: () => sacSIRune,
+    sacSpeedRune: () => sacSpeedRune,
+    sacThriftRune: () => sacThriftRune,
     setAutoBuyTess: () => setAutoBuyTess,
     setAutoParticle: () => setAutoParticle,
     setAutoPrestige: () => setAutoPrestige,
@@ -385,6 +393,7 @@ var macroCmds = (() => {
     setCoinBuyQuant: () => setCoinBuyQuant,
     setDiamondBuyQuant: () => setDiamondBuyQuant,
     setMythosBuyQuant: () => setMythosBuyQuant,
+    setOfferingsBuildQuant: () => setOfferingsBuildQuant,
     setParticleBuyQuant: () => setParticleBuyQuant,
     setTessBuildQuant: () => setTessBuildQuant,
     togglAutobuyeOracles: () => togglAutobuyeOracles,
@@ -1418,6 +1427,70 @@ var macroCmds = (() => {
     return makeCheckIfAvalible(`ach${id}`, 4 /* None */);
   }
 
+  // src/runes/runes.ts
+  var sacSpeedRune = makeClicker("activaterune1", "Speed Rune");
+  var sacDuplicationRune = makeClicker("activaterune2", "Duplication Rune");
+  var sacPrismRune = makeClicker("activaterune3", "Prism Rune");
+  var sacThriftRune = makeClicker("activaterune4", "Thrift Rune");
+  var sacSIRune = makeClicker("activaterune5", "Superior Intellect Rune");
+  var sacIARune = makeClicker("activaterune6", "Infinite Ascent Rune");
+  var sacAAGRune = makeClicker("activaterune7", "AAOG Rune");
+  function setOfferingsBuildQuant(quant) {
+    switch (quant) {
+      case "offeringone":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "offeringten":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "offeringhundred":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "offeringthousand":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "offering10k":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "offering100k":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      default:
+        console.error("invalid input");
+        return;
+    }
+  }
+
   // src/buyQuants.ts
   var coinBuyQuant = {
     one: "coinone",
@@ -1458,6 +1531,14 @@ var macroCmds = (() => {
     onek: "tesseractthousand",
     tenk: "tesseract10k",
     hunderedk: "tesseract100k"
+  };
+  var offeringBuyQuant = {
+    one: "offeringone",
+    ten: "offeringten",
+    hundered: "offeringhundred",
+    onek: "offeringthousand",
+    tenk: "offering10k",
+    hunderedk: "offering100k"
   };
   return __toCommonJS(index_exports);
 })();
