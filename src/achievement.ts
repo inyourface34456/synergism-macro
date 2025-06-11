@@ -6,7 +6,7 @@ export function checkIfHaveAchivment(id: number) {
         return 0;
     }
 
-    return makeCheckIfAvalible(`ach${id}`, Type.Upgrade);
+    return makeCheckIfAvalible(`ach${id}`, Type.Upgrade)();
 }
 
 export function checkIfAchivmentisRed(id: number) {
@@ -15,7 +15,7 @@ export function checkIfAchivmentisRed(id: number) {
         return 0;
     }
 
-    return makeCheckIfAvalible(`ach${id}`, Type.RedAchv);
+    return makeCheckIfAvalible(`ach${id}`, Type.RedAchv)();
 }
 
 export function checkIfAchivmentisPurple(id: number) {
@@ -24,7 +24,7 @@ export function checkIfAchivmentisPurple(id: number) {
         return 0;
     }
 
-    return makeCheckIfAvalible(`ach${id}`, Type.PurpAchv);
+    return makeCheckIfAvalible(`ach${id}`, Type.PurpAchv)();
 }
 
 export function checkIfAchivmentisNone(id: number) {
@@ -33,5 +33,5 @@ export function checkIfAchivmentisNone(id: number) {
         return 0;
     }
 
-    return makeCheckIfAvalible(`ach${id}`, Type.None);
+    return makeCheckIfAvalible(`ach${id}`, Type.None)();
 }

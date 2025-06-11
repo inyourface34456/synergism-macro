@@ -83,6 +83,10 @@ export {buyParticleUpgrade5, buyParticleUpgrade6, buyParticleUpgrade7, buyPartic
 
 export {checkIfAchivmentisNone, checkIfAchivmentisPurple, checkIfAchivmentisRed, checkIfHaveAchivment} from "./achievement"
 
-export {sacAAGRune, sacDuplicationRune, sacIARune, sacPrismRune, sacSIRune, sacSpeedRune, sacThriftRune, setOfferingsBuildQuant} from "./runes/runes"
+export {sacAAGRune, sacDuplicationRune, sacIARune, sacPrismRune, sacSIRune, sacSpeedRune, sacThriftRune, setOfferingsBuildQuant, getAutoSacStatus, toggleAutoSac} from "./runes/runes"
+
+export {buyAllShards, buyCommonShard, buyEpicShard, buyLegendaryShard, buyMythicalShard, buyRareShard, buyTalismanShard, buyUncommonShard, fotiftyChronos, fotiftyExemption} from "./runes/talisman"
+export {fotiftyMetaphysics, fotiftyMidas, fotiftyMortuusEst, fotiftyPlastic, fotiftyPolymath, enhanceChronos, enhanceExemption, enhanceMetaphysics, enhanceMidas, enhanceMortuusEst} from "./runes/talisman"
+export {enhancePlastic, enhancePolymath, getAutoEnhanceStatus, toggleAutoEnhance, toggleAutoFortify, setTalismanBuildQuant, getAutoFortifyStatus} from "./runes/talisman"
 
 export {coinBuyQuant, diamondBuyQuant, mythosBuyQuant, reincarnateBuyQuant, ascendBuyQuant, offeringBuyQuant} from "./buyQuants"

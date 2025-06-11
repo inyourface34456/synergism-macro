@@ -51,3 +51,10 @@ export let offeringBuyQuant  = {
     tenk: "offering10k",
     hunderedk: "offering100k"
 }
+
+export let talismanBuyQuant  = {
+    ten: "talismanTen",
+    twentyFive: "talismanTwentyFive",
+    fifty: "talismanFifty",
+    hundered: "talismanHundred",
+}

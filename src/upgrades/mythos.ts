@@ -72,5 +72,8 @@ export function getMythosAutoUpgraderStatus() {
         return false;
     } else if (id?.style.borderColor === "green") {
         return true;
+    } else {
+        console.error(`color is not red or green, color is ${id?.style.borderColor}`);
+        return 0;
     }
 }

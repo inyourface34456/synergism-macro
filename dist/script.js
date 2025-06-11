@@ -24,6 +24,7 @@ var macroCmds = (() => {
     buyAccel: () => buyAccel,
     buyAccelBoost: () => buyAccelBoost,
     buyAlchemies: () => buyAlchemies,
+    buyAllShards: () => buyAllShards,
     buyAugments: () => buyAugments,
     buyAutomationUpgrade1: () => buyAutomationUpgrade1,
     buyAutomationUpgrade10: () => buyAutomationUpgrade10,
@@ -74,6 +75,7 @@ var macroCmds = (() => {
     buyCoinUpgrade7: () => buyCoinUpgrade7,
     buyCoinUpgrade8: () => buyCoinUpgrade8,
     buyCoinUpgrade9: () => buyCoinUpgrade9,
+    buyCommonShard: () => buyCommonShard,
     buyDiamondUpgrade1: () => buyDiamondUpgrade1,
     buyDiamondUpgrade10: () => buyDiamondUpgrade10,
     buyDiamondUpgrade11: () => buyDiamondUpgrade11,
@@ -97,6 +99,7 @@ var macroCmds = (() => {
     buyDot: () => buyDot,
     buyElement: () => buyElement,
     buyEnchantments: () => buyEnchantments,
+    buyEpicShard: () => buyEpicShard,
     buyGalacticNuclei: () => buyGalacticNuclei,
     buyGeneratorUpgrade1: () => buyGeneratorUpgrade1,
     buyGeneratorUpgrade10: () => buyGeneratorUpgrade10,
@@ -121,7 +124,9 @@ var macroCmds = (() => {
     buyGrandmasters: () => buyGrandmasters,
     buyHilbertSpace: () => buyHilbertSpace,
     buyInvestment: () => buyInvestment,
+    buyLegendaryShard: () => buyLegendaryShard,
     buyMult: () => buyMult,
+    buyMythicalShard: () => buyMythicalShard,
     buyMythosUpgrade1: () => buyMythosUpgrade1,
     buyMythosUpgrade10: () => buyMythosUpgrade10,
     buyMythosUpgrade11: () => buyMythosUpgrade11,
@@ -174,8 +179,11 @@ var macroCmds = (() => {
     buyProton: () => buyProton,
     buyPulsar: () => buyPulsar,
     buyQuasar: () => buyQuasar,
+    buyRareShard: () => buyRareShard,
     buyRefinery: () => buyRefinery,
+    buyTalismanShard: () => buyTalismanShard,
     buyThreeSpace: () => buyThreeSpace,
+    buyUncommonShard: () => buyUncommonShard,
     buyVector: () => buyVector,
     buyWizards: () => buyWizards,
     buyWorker: () => buyWorker,
@@ -195,8 +203,25 @@ var macroCmds = (() => {
     constentUpgrade8: () => constentUpgrade8,
     constentUpgrade9: () => constentUpgrade9,
     diamondBuyQuant: () => diamondBuyQuant,
+    enhanceChronos: () => enhanceChronos,
+    enhanceExemption: () => enhanceExemption,
+    enhanceMetaphysics: () => enhanceMetaphysics,
+    enhanceMidas: () => enhanceMidas,
+    enhanceMortuusEst: () => enhanceMortuusEst,
+    enhancePlastic: () => enhancePlastic,
+    enhancePolymath: () => enhancePolymath,
+    fotiftyChronos: () => fotiftyChronos,
+    fotiftyExemption: () => fotiftyExemption,
+    fotiftyMetaphysics: () => fotiftyMetaphysics,
+    fotiftyMidas: () => fotiftyMidas,
+    fotiftyMortuusEst: () => fotiftyMortuusEst,
+    fotiftyPlastic: () => fotiftyPlastic,
+    fotiftyPolymath: () => fotiftyPolymath,
+    getAutoEnhanceStatus: () => getAutoEnhanceStatus,
+    getAutoFortifyStatus: () => getAutoFortifyStatus,
     getAutoParticleMode: () => getAutoParticleMode,
     getAutoPrestigeMode: () => getAutoPrestigeMode,
+    getAutoSacStatus: () => getAutoSacStatus,
     getAutoTessBuyMode: () => getAutoTessBuyMode,
     getAutoTranscendMode: () => getAutoTranscendMode,
     getCoinAutoUpgraderStatus: () => getCoinAutoUpgraderStatus,
@@ -395,13 +420,17 @@ var macroCmds = (() => {
     setMythosBuyQuant: () => setMythosBuyQuant,
     setOfferingsBuildQuant: () => setOfferingsBuildQuant,
     setParticleBuyQuant: () => setParticleBuyQuant,
+    setTalismanBuildQuant: () => setTalismanBuildQuant,
     setTessBuildQuant: () => setTessBuildQuant,
     togglAutobuyeOracles: () => togglAutobuyeOracles,
     toggleAutoBuyTess: () => toggleAutoBuyTess,
+    toggleAutoEnhance: () => toggleAutoEnhance,
+    toggleAutoFortify: () => toggleAutoFortify,
     toggleAutoParticle: () => toggleAutoParticle,
     toggleAutoParticleMode: () => toggleAutoParticleMode,
     toggleAutoPrestige: () => toggleAutoPrestige,
     toggleAutoPrestigeMode: () => toggleAutoPrestigeMode,
+    toggleAutoSac: () => toggleAutoSac,
     toggleAutoTessBuyMode: () => toggleAutoTessBuyMode,
     toggleAutoTranscend: () => toggleAutoTranscend,
     toggleAutoTranscendeMode: () => toggleAutoTranscendeMode,
@@ -1190,6 +1219,9 @@ var macroCmds = (() => {
       return false;
     } else if ((id == null ? void 0 : id.style.borderColor) === "green") {
       return true;
+    } else {
+      console.error(`color is not red or green, color is ${id == null ? void 0 : id.style.borderColor}`);
+      return 0;
     }
   }
 
@@ -1244,6 +1276,9 @@ var macroCmds = (() => {
       return false;
     } else if ((id == null ? void 0 : id.style.borderColor) === "green") {
       return true;
+    } else {
+      console.error(`color is not red or green, color is ${id == null ? void 0 : id.style.borderColor}`);
+      return 0;
     }
   }
 
@@ -1298,6 +1333,9 @@ var macroCmds = (() => {
       return false;
     } else if ((id == null ? void 0 : id.style.borderColor) === "green") {
       return true;
+    } else {
+      console.error(`color is not red or green, color is ${id == null ? void 0 : id.style.borderColor}`);
+      return 0;
     }
   }
 
@@ -1394,6 +1432,9 @@ var macroCmds = (() => {
       return false;
     } else if ((id == null ? void 0 : id.style.borderColor) === "green") {
       return true;
+    } else {
+      console.error(`color is not red or green, color is ${id == null ? void 0 : id.style.borderColor}`);
+      return 0;
     }
   }
 
@@ -1403,28 +1444,28 @@ var macroCmds = (() => {
       console.error("invalid achivment id");
       return 0;
     }
-    return makeCheckIfAvalible(`ach${id}`, 1 /* Upgrade */);
+    return makeCheckIfAvalible(`ach${id}`, 1 /* Upgrade */)();
   }
   function checkIfAchivmentisRed(id) {
     if (id < 0 || id > 280) {
       console.error("invalid achivment id");
       return 0;
     }
-    return makeCheckIfAvalible(`ach${id}`, 2 /* RedAchv */);
+    return makeCheckIfAvalible(`ach${id}`, 2 /* RedAchv */)();
   }
   function checkIfAchivmentisPurple(id) {
     if (id < 0 || id > 280) {
       console.error("invalid achivment id");
       return 0;
     }
-    return makeCheckIfAvalible(`ach${id}`, 3 /* PurpAchv */);
+    return makeCheckIfAvalible(`ach${id}`, 3 /* PurpAchv */)();
   }
   function checkIfAchivmentisNone(id) {
     if (id < 0 || id > 280) {
       console.error("invalid achivment id");
       return 0;
     }
-    return makeCheckIfAvalible(`ach${id}`, 4 /* None */);
+    return makeCheckIfAvalible(`ach${id}`, 4 /* None */)();
   }
 
   // src/runes/runes.ts
@@ -1435,6 +1476,21 @@ var macroCmds = (() => {
   var sacSIRune = makeClicker("activaterune5", "Superior Intellect Rune");
   var sacIARune = makeClicker("activaterune6", "Infinite Ascent Rune");
   var sacAAGRune = makeClicker("activaterune7", "AAOG Rune");
+  var toggleAutoSac = makeClicker("toggleautosacrifice", "Auto Sac.");
+  function getAutoSacStatus() {
+    let id = document.getElementById("toggleautosacrifice");
+    if (!id) {
+      console.error(`Cannot find the Auto Sac. button, or somethings is worng: ${id}`);
+      return 0;
+    } else if ((id == null ? void 0 : id.style.borderColor) === "red") {
+      return false;
+    } else if ((id == null ? void 0 : id.style.borderColor) === "green") {
+      return true;
+    } else {
+      console.error(`color is not red or green, color is ${id == null ? void 0 : id.style.borderColor}`);
+      return 0;
+    }
+  }
   function setOfferingsBuildQuant(quant) {
     switch (quant) {
       case "offeringone":
@@ -1478,6 +1534,99 @@ var macroCmds = (() => {
         }
         return;
       case "offering100k":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      default:
+        console.error("invalid input");
+        return;
+    }
+  }
+
+  // src/runes/talisman.ts
+  var buyTalismanShard = makeClicker("buyTalismanItem1", "Talisman Fragment");
+  var buyCommonShard = makeClicker("buyTalismanItem2", "Common Shard");
+  var buyUncommonShard = makeClicker("buyTalismanItem3", "Uncommon Shard");
+  var buyRareShard = makeClicker("buyTalismanItem4", "Rare Shard");
+  var buyEpicShard = makeClicker("buyTalismanItem5", "Epic Shard");
+  var buyLegendaryShard = makeClicker("buyTalismanItem6", "Lengendary Shard");
+  var buyMythicalShard = makeClicker("buyTalismanItem7", "Mythical Shard");
+  var buyAllShards = makeClicker("buyTalismanAll", "Buy All");
+  var fotiftyExemption = makeClicker("leveluptalisman1", "Fortify Exemption");
+  var enhanceExemption = makeClicker("enhancetalisman1", "Enhance Exemption");
+  var fotiftyChronos = makeClicker("leveluptalisman2", "Fortify Chronos");
+  var enhanceChronos = makeClicker("enhancetalisman2", "Enhance Chronos");
+  var fotiftyMidas = makeClicker("leveluptalisman3", "Fortify Midas");
+  var enhanceMidas = makeClicker("enhancetalisman3", "Enhance Midas");
+  var fotiftyMetaphysics = makeClicker("leveluptalisman4", "Fortify Metaphysics");
+  var enhanceMetaphysics = makeClicker("enhancetalisman4", "Enhance Metaphysics");
+  var fotiftyPolymath = makeClicker("leveluptalisman5", "Fortify Polymath");
+  var enhancePolymath = makeClicker("enhancetalisman5", "Enhance Polymath");
+  var fotiftyMortuusEst = makeClicker("leveluptalisman6", "Fortify Mortuus Est");
+  var enhanceMortuusEst = makeClicker("enhancetalisman6", "Enhance Mortuus Est");
+  var fotiftyPlastic = makeClicker("leveluptalisman7", "Fortify Plastic");
+  var enhancePlastic = makeClicker("enhancetalisman7", "Enhance Plastic");
+  var toggleAutoEnhance = makeClicker("toggleautoenhance", "Auto Fortify");
+  var toggleAutoFortify = makeClicker("toggleautofortify", "Auto Enhance");
+  function getAutoEnhanceStatus() {
+    let id = document.getElementById("toggleautoenhance");
+    if (!id) {
+      console.error(`Cannot find the Auto Enhance button, or somethings is worng: ${id}`);
+      return 0;
+    } else if ((id == null ? void 0 : id.style.borderColor) === "red") {
+      return false;
+    } else if ((id == null ? void 0 : id.style.borderColor) === "green") {
+      return true;
+    } else {
+      console.error(`color is not red or green, color is ${id == null ? void 0 : id.style.borderColor}`);
+      return 0;
+    }
+  }
+  function getAutoFortifyStatus() {
+    let id = document.getElementById("toggleautofortify");
+    if (!id) {
+      console.error(`Cannot find the Auto Fortify button, or somethings is worng: ${id}`);
+      return 0;
+    } else if ((id == null ? void 0 : id.style.borderColor) === "red") {
+      return false;
+    } else if ((id == null ? void 0 : id.style.borderColor) === "green") {
+      return true;
+    } else {
+      console.error(`color is not red or green, color is ${id == null ? void 0 : id.style.borderColor}`);
+      return 0;
+    }
+  }
+  function setTalismanBuildQuant(quant) {
+    switch (quant) {
+      case "talismanTen":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "talismanTwentyFive":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "talismanFifty":
+        var but = document.getElementById(quant);
+        if (but) {
+          but.click();
+        } else {
+          console.error(`could not find Quanity selector`);
+        }
+        return;
+      case "talismanHundred":
         var but = document.getElementById(quant);
         if (but) {
           but.click();
