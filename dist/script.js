@@ -144,6 +144,26 @@ var macroCmds = (() => {
     buyMythosUpgrade9: () => buyMythosUpgrade9,
     buyOracles: () => buyOracles,
     buyPandorasBox: () => buyPandorasBox,
+    buyParticleUpgrade1: () => buyParticleUpgrade1,
+    buyParticleUpgrade10: () => buyParticleUpgrade10,
+    buyParticleUpgrade11: () => buyParticleUpgrade11,
+    buyParticleUpgrade12: () => buyParticleUpgrade12,
+    buyParticleUpgrade13: () => buyParticleUpgrade13,
+    buyParticleUpgrade14: () => buyParticleUpgrade14,
+    buyParticleUpgrade15: () => buyParticleUpgrade15,
+    buyParticleUpgrade16: () => buyParticleUpgrade16,
+    buyParticleUpgrade17: () => buyParticleUpgrade17,
+    buyParticleUpgrade18: () => buyParticleUpgrade18,
+    buyParticleUpgrade19: () => buyParticleUpgrade19,
+    buyParticleUpgrade2: () => buyParticleUpgrade2,
+    buyParticleUpgrade20: () => buyParticleUpgrade20,
+    buyParticleUpgrade3: () => buyParticleUpgrade3,
+    buyParticleUpgrade4: () => buyParticleUpgrade4,
+    buyParticleUpgrade5: () => buyParticleUpgrade5,
+    buyParticleUpgrade6: () => buyParticleUpgrade6,
+    buyParticleUpgrade7: () => buyParticleUpgrade7,
+    buyParticleUpgrade8: () => buyParticleUpgrade8,
+    buyParticleUpgrade9: () => buyParticleUpgrade9,
     buyPikaxe: () => buyPikaxe,
     buyPrestigeUpgrade1: () => buyPrestigeUpgrade1,
     buyPrestigeUpgrade2: () => buyPrestigeUpgrade2,
@@ -179,6 +199,7 @@ var macroCmds = (() => {
     getDiamondAutoUpgraderStatus: () => getDiamondAutoUpgraderStatus,
     getGeneratorAutoUpgraderStatus: () => getGeneratorAutoUpgraderStatus,
     getMythosAutoUpgraderStatus: () => getMythosAutoUpgraderStatus,
+    getParticleAutoUpgraderStatus: () => getParticleAutoUpgraderStatus,
     isAccelBoostBuyable: () => isAccelBoostBuyable,
     isAccelBuyable: () => isAccelBuyable,
     isAlchemiesBuyable: () => isAlchemiesBuyable,
@@ -316,6 +337,26 @@ var macroCmds = (() => {
     isMythosUpgrade9Buyable: () => isMythosUpgrade9Buyable,
     isOraclesBuyable: () => isOraclesBuyable,
     isPandorasBoxBuyable: () => isPandorasBoxBuyable,
+    isParticleUpgrade10Buyable: () => isParticleUpgrade10Buyable,
+    isParticleUpgrade11Buyable: () => isParticleUpgrade11Buyable,
+    isParticleUpgrade12Buyable: () => isParticleUpgrade12Buyable,
+    isParticleUpgrade13Buyable: () => isParticleUpgrade13Buyable,
+    isParticleUpgrade14Buyable: () => isParticleUpgrade14Buyable,
+    isParticleUpgrade15Buyable: () => isParticleUpgrade15Buyable,
+    isParticleUpgrade16Buyable: () => isParticleUpgrade16Buyable,
+    isParticleUpgrade17Buyable: () => isParticleUpgrade17Buyable,
+    isParticleUpgrade18Buyable: () => isParticleUpgrade18Buyable,
+    isParticleUpgrade19Buyable: () => isParticleUpgrade19Buyable,
+    isParticleUpgrade1Buyable: () => isParticleUpgrade1Buyable,
+    isParticleUpgrade20Buyable: () => isParticleUpgrade20Buyable,
+    isParticleUpgrade2Buyable: () => isParticleUpgrade2Buyable,
+    isParticleUpgrade3Buyable: () => isParticleUpgrade3Buyable,
+    isParticleUpgrade4Buyable: () => isParticleUpgrade4Buyable,
+    isParticleUpgrade5Buyable: () => isParticleUpgrade5Buyable,
+    isParticleUpgrade6Buyable: () => isParticleUpgrade6Buyable,
+    isParticleUpgrade7Buyable: () => isParticleUpgrade7Buyable,
+    isParticleUpgrade8Buyable: () => isParticleUpgrade8Buyable,
+    isParticleUpgrade9Buyable: () => isParticleUpgrade9Buyable,
     isPikaxeBuyable: () => isPikaxeBuyable,
     isPrestigeUpgrade1Automated: () => isPrestigeUpgrade1Automated,
     isPrestigeUpgrade2Automated: () => isPrestigeUpgrade2Automated,
@@ -381,7 +422,8 @@ var macroCmds = (() => {
     toggleCoinUpgradeAutoBuy: () => toggleCoinUpgradeAutoBuy,
     toggleDiamondUpgradeAutoBuy: () => toggleDiamondUpgradeAutoBuy,
     toggleGeneratorUpgradeAutoBuy: () => toggleGeneratorUpgradeAutoBuy,
-    toggleMythosUpgradeAutoBuy: () => toggleMythosUpgradeAutoBuy
+    toggleMythosUpgradeAutoBuy: () => toggleMythosUpgradeAutoBuy,
+    toggleParticleUpgradeAutoBuy: () => toggleParticleUpgradeAutoBuy
   });
 
   // src/utils.ts
@@ -1241,6 +1283,60 @@ var macroCmds = (() => {
   var isAutomationUpgrade19Buyable = makeCheckIfAvalible("upg99", 1 /* Upgrade */);
   var buyAutomationUpgrade20 = makeClicker("upg100", "Automation Upgrade 20");
   var isAutomationUpgrade20Buyable = makeCheckIfAvalible("upg100", 1 /* Upgrade */);
+
+  // src/upgrades/particles.ts
+  var buyParticleUpgrade1 = makeClicker("upg61", "Particle Upgrade 1");
+  var isParticleUpgrade1Buyable = makeCheckIfAvalible("upg61", 1 /* Upgrade */);
+  var buyParticleUpgrade2 = makeClicker("upg62", "Particle Upgrade 2");
+  var isParticleUpgrade2Buyable = makeCheckIfAvalible("upg62", 1 /* Upgrade */);
+  var buyParticleUpgrade3 = makeClicker("upg63", "Particle Upgrade 3");
+  var isParticleUpgrade3Buyable = makeCheckIfAvalible("upg63", 1 /* Upgrade */);
+  var buyParticleUpgrade4 = makeClicker("upg64", "Particle Upgrade 4");
+  var isParticleUpgrade4Buyable = makeCheckIfAvalible("upg64", 1 /* Upgrade */);
+  var buyParticleUpgrade5 = makeClicker("upg65", "Particle Upgrade 5");
+  var isParticleUpgrade5Buyable = makeCheckIfAvalible("upg65", 1 /* Upgrade */);
+  var buyParticleUpgrade6 = makeClicker("upg66", "Particle Upgrade 6");
+  var isParticleUpgrade6Buyable = makeCheckIfAvalible("upg66", 1 /* Upgrade */);
+  var buyParticleUpgrade7 = makeClicker("upg67", "Particle Upgrade 7");
+  var isParticleUpgrade7Buyable = makeCheckIfAvalible("upg67", 1 /* Upgrade */);
+  var buyParticleUpgrade8 = makeClicker("upg68", "Particle Upgrade 8");
+  var isParticleUpgrade8Buyable = makeCheckIfAvalible("upg68", 1 /* Upgrade */);
+  var buyParticleUpgrade9 = makeClicker("upg69", "Particle Upgrade 9");
+  var isParticleUpgrade9Buyable = makeCheckIfAvalible("upg69", 1 /* Upgrade */);
+  var buyParticleUpgrade10 = makeClicker("upg70", "Particle Upgrade 10");
+  var isParticleUpgrade10Buyable = makeCheckIfAvalible("upg70", 1 /* Upgrade */);
+  var buyParticleUpgrade11 = makeClicker("upg71", "Particle Upgrade 11");
+  var isParticleUpgrade11Buyable = makeCheckIfAvalible("upg71", 1 /* Upgrade */);
+  var buyParticleUpgrade12 = makeClicker("upg72", "Particle Upgrade 12");
+  var isParticleUpgrade12Buyable = makeCheckIfAvalible("upg72", 1 /* Upgrade */);
+  var buyParticleUpgrade13 = makeClicker("upg73", "Particle Upgrade 13");
+  var isParticleUpgrade13Buyable = makeCheckIfAvalible("upg73", 1 /* Upgrade */);
+  var buyParticleUpgrade14 = makeClicker("upg74", "Particle Upgrade 14");
+  var isParticleUpgrade14Buyable = makeCheckIfAvalible("upg74", 1 /* Upgrade */);
+  var buyParticleUpgrade15 = makeClicker("upg75", "Particle Upgrade 15");
+  var isParticleUpgrade15Buyable = makeCheckIfAvalible("upg75", 1 /* Upgrade */);
+  var buyParticleUpgrade16 = makeClicker("upg76", "Particle Upgrade 16");
+  var isParticleUpgrade16Buyable = makeCheckIfAvalible("upg76", 1 /* Upgrade */);
+  var buyParticleUpgrade17 = makeClicker("upg77", "Particle Upgrade 17");
+  var isParticleUpgrade17Buyable = makeCheckIfAvalible("upg77", 1 /* Upgrade */);
+  var buyParticleUpgrade18 = makeClicker("upg78", "Particle Upgrade 18");
+  var isParticleUpgrade18Buyable = makeCheckIfAvalible("upg78", 1 /* Upgrade */);
+  var buyParticleUpgrade19 = makeClicker("upg79", "Particle Upgrade 19");
+  var isParticleUpgrade19Buyable = makeCheckIfAvalible("upg79", 1 /* Upgrade */);
+  var buyParticleUpgrade20 = makeClicker("upg80", "Particle Upgrade 20");
+  var isParticleUpgrade20Buyable = makeCheckIfAvalible("upg80", 1 /* Upgrade */);
+  var toggleParticleUpgradeAutoBuy = makeClicker("reincarnateAutoUpgrade", "Particle Auto Upgrade");
+  function getParticleAutoUpgraderStatus() {
+    let id = document.getElementById("reincarnateAutoUpgrade");
+    if (!id) {
+      console.error(`Cannot find the Particle auto upgrade button, or somethings is worng: ${id}`);
+      return 0;
+    } else if ((id == null ? void 0 : id.style.borderColor) === "red") {
+      return false;
+    } else if ((id == null ? void 0 : id.style.borderColor) === "green") {
+      return true;
+    }
+  }
 
   // src/buyQuants.ts
   var coinBuyQuant = {

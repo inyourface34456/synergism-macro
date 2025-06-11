@@ -74,4 +74,11 @@ export {buyAutomationUpgrade11, buyAutomationUpgrade12, buyAutomationUpgrade13, 
 export {buyAutomationUpgrade18, buyAutomationUpgrade19, buyAutomationUpgrade2, buyAutomationUpgrade20, buyAutomationUpgrade3, buyAutomationUpgrade4, buyAutomationUpgrade5} from "./upgrades/automation"
 export {buyAutomationUpgrade6, buyAutomationUpgrade7, buyAutomationUpgrade8, buyAutomationUpgrade9} from "./upgrades/automation"
 
+export {isParticleUpgrade10Buyable, isParticleUpgrade11Buyable, isParticleUpgrade12Buyable, isParticleUpgrade13Buyable, isParticleUpgrade14Buyable, isParticleUpgrade15Buyable} from "./upgrades/particles"
+export {isParticleUpgrade16Buyable, isParticleUpgrade17Buyable, isParticleUpgrade18Buyable, isParticleUpgrade19Buyable, isParticleUpgrade1Buyable, isParticleUpgrade20Buyable} from "./upgrades/particles"
+export {isParticleUpgrade2Buyable, isParticleUpgrade3Buyable, isParticleUpgrade4Buyable, isParticleUpgrade5Buyable, isParticleUpgrade6Buyable, isParticleUpgrade7Buyable} from "./upgrades/particles"
+export {isParticleUpgrade8Buyable, buyParticleUpgrade1, buyParticleUpgrade10, buyParticleUpgrade11, buyParticleUpgrade12, buyParticleUpgrade13, buyParticleUpgrade14, buyParticleUpgrade15} from "./upgrades/particles"
+export {buyParticleUpgrade16, buyParticleUpgrade17, buyParticleUpgrade18, buyParticleUpgrade19, buyParticleUpgrade2, buyParticleUpgrade20, buyParticleUpgrade3, buyParticleUpgrade4} from "./upgrades/particles"
+export {buyParticleUpgrade5, buyParticleUpgrade6, buyParticleUpgrade7, buyParticleUpgrade8, buyParticleUpgrade9, isParticleUpgrade9Buyable, toggleParticleUpgradeAutoBuy, getParticleAutoUpgraderStatus} from "./upgrades/particles"
+
 export {coinBuyQuant, diamondBuyQuant, mythosBuyQuant, reincarnateBuyQuant, ascendBuyQuant} from "./buyQuants"
