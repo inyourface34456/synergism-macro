@@ -89,3 +89,18 @@ export function getCoinAutoUpgraderStatus() {
         return true;
     }
 }
+
+export let toggleUpgradeHoverBuy = makeClicker("toggle9", "Hover Buy Upgrades");
+
+export function getHoverAutoUpgraderStatus() {
+    let id: HTMLButtonElement = document.getElementById("toggle9") as HTMLButtonElement;
+
+    if (!id) {
+        console.error(`Cannot find the Hover Upgrade button, or somethings is worng: ${id}`);
+        return 0;
+    } else if (id?.style.borderColor === "red") {
+        return false;
+    } else if (id?.style.borderColor === "green") {
+        return true;
+    }
+}

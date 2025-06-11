@@ -1079,6 +1079,7 @@ var macroCmds = (() => {
       return true;
     }
   }
+  var toggleUpgradeHoverBuy = makeClicker("toggle9", "Hover Buy Upgrades");
 
   // src/upgrades/diamond.ts
   var buyDiamondUpgrade1 = makeClicker("upg21", "Diamond Upgrade 1");
