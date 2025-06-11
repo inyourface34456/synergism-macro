@@ -81,4 +81,6 @@ export {isParticleUpgrade8Buyable, buyParticleUpgrade1, buyParticleUpgrade10, bu
 export {buyParticleUpgrade16, buyParticleUpgrade17, buyParticleUpgrade18, buyParticleUpgrade19, buyParticleUpgrade2, buyParticleUpgrade20, buyParticleUpgrade3, buyParticleUpgrade4} from "./upgrades/particles"
 export {buyParticleUpgrade5, buyParticleUpgrade6, buyParticleUpgrade7, buyParticleUpgrade8, buyParticleUpgrade9, isParticleUpgrade9Buyable, toggleParticleUpgradeAutoBuy, getParticleAutoUpgraderStatus} from "./upgrades/particles"
 
+export {checkIfAchivmentisNone, checkIfAchivmentisPurple, checkIfAchivmentisRed, checkIfHaveAchivment} from "./achievement"
+
 export {coinBuyQuant, diamondBuyQuant, mythosBuyQuant, reincarnateBuyQuant, ascendBuyQuant} from "./buyQuants"

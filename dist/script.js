@@ -179,6 +179,10 @@ var macroCmds = (() => {
     buyVector: () => buyVector,
     buyWizards: () => buyWizards,
     buyWorker: () => buyWorker,
+    checkIfAchivmentisNone: () => checkIfAchivmentisNone,
+    checkIfAchivmentisPurple: () => checkIfAchivmentisPurple,
+    checkIfAchivmentisRed: () => checkIfAchivmentisRed,
+    checkIfHaveAchivment: () => checkIfHaveAchivment,
     coinBuyQuant: () => coinBuyQuant,
     constentUpgrade1: () => constentUpgrade1,
     constentUpgrade10: () => constentUpgrade10,
@@ -464,6 +468,51 @@ var macroCmds = (() => {
       case 1 /* Upgrade */:
         return function() {
           let res = checkClassList(id, "green-background");
+          if (res === 0) {
+            return 0;
+          } else if (res) {
+            return true;
+          } else {
+            return false;
+          }
+        };
+      case 2 /* RedAchv */:
+        return function() {
+          let res = checkClassList(id, "redach");
+          if (res === 0) {
+            return 0;
+          } else if (res) {
+            return true;
+          } else {
+            return false;
+          }
+        };
+      case 3 /* PurpAchv */:
+        return function() {
+          let res = checkClassList(id, "purpleach");
+          if (res === 0) {
+            return 0;
+          } else if (res) {
+            return true;
+          } else {
+            return false;
+          }
+        };
+      case 4 /* None */:
+        return function() {
+          let res1 = makeCheckIfAvalible(id, 3 /* PurpAchv */)();
+          let res2 = makeCheckIfAvalible(id, 2 /* RedAchv */)();
+          if (res1 === 0 || res2 === 0) {
+            return 0;
+          } else if (res1 === true || res2 === true) {
+            return true;
+          } else {
+            return false;
+          }
+        };
+      default:
+        return function() {
+          let res = checkClassList(id, "buildingPurchaseBtnAvailable");
           if (res === 0) {
             return 0;
           } else if (res) {
@@ -1337,6 +1386,36 @@ var macroCmds = (() => {
     } else if ((id == null ? void 0 : id.style.borderColor) === "green") {
       return true;
     }
+  }
+
+  // src/achievement.ts
+  function checkIfHaveAchivment(id) {
+    if (id < 0 || id > 280) {
+      console.error("invalid achivment id");
+      return 0;
+    }
+    return makeCheckIfAvalible(`ach${id}`, 1 /* Upgrade */);
+  }
+  function checkIfAchivmentisRed(id) {
+    if (id < 0 || id > 280) {
+      console.error("invalid achivment id");
+      return 0;
+    }
+    return makeCheckIfAvalible(`ach${id}`, 2 /* RedAchv */);
+  }
+  function checkIfAchivmentisPurple(id) {
+    if (id < 0 || id > 280) {
+      console.error("invalid achivment id");
+      return 0;
+    }
+    return makeCheckIfAvalible(`ach${id}`, 3 /* PurpAchv */);
+  }
+  function checkIfAchivmentisNone(id) {
+    if (id < 0 || id > 280) {
+      console.error("invalid achivment id");
+      return 0;
+    }
+    return makeCheckIfAvalible(`ach${id}`, 4 /* None */);
   }
 
   // src/buyQuants.ts

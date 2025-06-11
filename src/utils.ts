@@ -1,11 +1,14 @@
 export enum Layer {
   Pristige,
-  Ascend
+  Ascend,
 }
 
 export enum Type {
   Bulding,
-  Upgrade
+  Upgrade,
+  RedAchv,
+  PurpAchv,
+  None,
 }
 
 export function makeClicker(id: string, disId: string) {
@@ -58,27 +61,79 @@ export function makeCheckIfAvalible(id: string, type: Type) {
           return false;
         }
       }
+
+    case Type.RedAchv:
+      return function () {
+        let res = checkClassList(id, "redach");
+
+        if (res === 0) {
+          return 0;
+        } else if (res) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+    case Type.PurpAchv:
+      return function () {
+        let res = checkClassList(id, "purpleach");
+
+        if (res === 0) {
+          return 0;
+        } else if (res) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+    case Type.None:
+      return function () {
+        let res1 = makeCheckIfAvalible(id, Type.PurpAchv)();
+        let res2 = makeCheckIfAvalible(id, Type.RedAchv)();
+
+        if (res1 === 0 || res2 === 0) {
+          return 0;
+        } else if (res1 === true || res2 === true) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+    default:
+      return function () {
+        let res = checkClassList(id, "buildingPurchaseBtnAvailable");
+
+        if (res === 0) {
+          return 0;
+        } else if (res) {
+          return true;
+        } else {
+          return false;
+        }
+      }
   }
-  
 }
 
 export function makeCheckIfAutomated(id: string, layer: Layer) {
   switch (layer) {
     case Layer.Ascend:
-      return function() {
-          let res = checkClassList(id, "constUpgradeAuto");
+      return function () {
+        let res = checkClassList(id, "constUpgradeAuto");
 
-          if (res === 0) {
-            return 0;
-          } else if (res) {
-            return true;
-          } else {
-            return false;
-          }
+        if (res === 0) {
+          return 0;
+        } else if (res) {
+          return true;
+        } else {
+          return false;
+        }
       }
 
     case Layer.Pristige:
-      return function() {
+      return function () {
         let res = document.getElementById(id);
 
         if (res && res.style.backgroundColor === "green") {
@@ -101,4 +156,3 @@ export function makeSetAuto(id: string, disId: string) {
     }
   }
 }
-
