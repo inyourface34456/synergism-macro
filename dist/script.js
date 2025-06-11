@@ -25,6 +25,26 @@ var macroCmds = (() => {
     buyAccelBoost: () => buyAccelBoost,
     buyAlchemies: () => buyAlchemies,
     buyAugments: () => buyAugments,
+    buyAutomationUpgrade1: () => buyAutomationUpgrade1,
+    buyAutomationUpgrade10: () => buyAutomationUpgrade10,
+    buyAutomationUpgrade11: () => buyAutomationUpgrade11,
+    buyAutomationUpgrade12: () => buyAutomationUpgrade12,
+    buyAutomationUpgrade13: () => buyAutomationUpgrade13,
+    buyAutomationUpgrade14: () => buyAutomationUpgrade14,
+    buyAutomationUpgrade15: () => buyAutomationUpgrade15,
+    buyAutomationUpgrade16: () => buyAutomationUpgrade16,
+    buyAutomationUpgrade17: () => buyAutomationUpgrade17,
+    buyAutomationUpgrade18: () => buyAutomationUpgrade18,
+    buyAutomationUpgrade19: () => buyAutomationUpgrade19,
+    buyAutomationUpgrade2: () => buyAutomationUpgrade2,
+    buyAutomationUpgrade20: () => buyAutomationUpgrade20,
+    buyAutomationUpgrade3: () => buyAutomationUpgrade3,
+    buyAutomationUpgrade4: () => buyAutomationUpgrade4,
+    buyAutomationUpgrade5: () => buyAutomationUpgrade5,
+    buyAutomationUpgrade6: () => buyAutomationUpgrade6,
+    buyAutomationUpgrade7: () => buyAutomationUpgrade7,
+    buyAutomationUpgrade8: () => buyAutomationUpgrade8,
+    buyAutomationUpgrade9: () => buyAutomationUpgrade9,
     buyBentTime: () => buyBentTime,
     buyCoalPlant: () => buyCoalPlant,
     buyCoalRig: () => buyCoalRig,
@@ -167,6 +187,26 @@ var macroCmds = (() => {
     isAutoPrestigeEnabled: () => isAutoPrestigeEnabled,
     isAutoTessBuldingEnabled: () => isAutoTessBuldingEnabled,
     isAutoTranscendEnabled: () => isAutoTranscendEnabled,
+    isAutomationUpgrade10Buyable: () => isAutomationUpgrade10Buyable,
+    isAutomationUpgrade11Buyable: () => isAutomationUpgrade11Buyable,
+    isAutomationUpgrade12Buyable: () => isAutomationUpgrade12Buyable,
+    isAutomationUpgrade13Buyable: () => isAutomationUpgrade13Buyable,
+    isAutomationUpgrade14Buyable: () => isAutomationUpgrade14Buyable,
+    isAutomationUpgrade15Buyable: () => isAutomationUpgrade15Buyable,
+    isAutomationUpgrade16Buyable: () => isAutomationUpgrade16Buyable,
+    isAutomationUpgrade17Buyable: () => isAutomationUpgrade17Buyable,
+    isAutomationUpgrade18Buyable: () => isAutomationUpgrade18Buyable,
+    isAutomationUpgrade19Buyable: () => isAutomationUpgrade19Buyable,
+    isAutomationUpgrade1Buyable: () => isAutomationUpgrade1Buyable,
+    isAutomationUpgrade20Buyable: () => isAutomationUpgrade20Buyable,
+    isAutomationUpgrade2Buyable: () => isAutomationUpgrade2Buyable,
+    isAutomationUpgrade3Buyable: () => isAutomationUpgrade3Buyable,
+    isAutomationUpgrade4Buyable: () => isAutomationUpgrade4Buyable,
+    isAutomationUpgrade5Buyable: () => isAutomationUpgrade5Buyable,
+    isAutomationUpgrade6Buyable: () => isAutomationUpgrade6Buyable,
+    isAutomationUpgrade7Buyable: () => isAutomationUpgrade7Buyable,
+    isAutomationUpgrade8Buyable: () => isAutomationUpgrade8Buyable,
+    isAutomationUpgrade9Buyable: () => isAutomationUpgrade9Buyable,
     isBentTimebuyable: () => isBentTimebuyable,
     isCoalPlantBuyable: () => isCoalPlantBuyable,
     isCoalRigBuyable: () => isCoalRigBuyable,
@@ -1159,6 +1199,48 @@ var macroCmds = (() => {
       return true;
     }
   }
+
+  // src/upgrades/automation.ts
+  var buyAutomationUpgrade1 = makeClicker("upg81", "Automation Upgrade 1");
+  var isAutomationUpgrade1Buyable = makeCheckIfAvalible("upg81", 1 /* Upgrade */);
+  var buyAutomationUpgrade2 = makeClicker("upg82", "Automation Upgrade 2");
+  var isAutomationUpgrade2Buyable = makeCheckIfAvalible("upg82", 1 /* Upgrade */);
+  var buyAutomationUpgrade3 = makeClicker("upg83", "Automation Upgrade 3");
+  var isAutomationUpgrade3Buyable = makeCheckIfAvalible("upg83", 1 /* Upgrade */);
+  var buyAutomationUpgrade4 = makeClicker("upg84", "Automation Upgrade 4");
+  var isAutomationUpgrade4Buyable = makeCheckIfAvalible("upg84", 1 /* Upgrade */);
+  var buyAutomationUpgrade5 = makeClicker("upg85", "Automation Upgrade 5");
+  var isAutomationUpgrade5Buyable = makeCheckIfAvalible("upg85", 1 /* Upgrade */);
+  var buyAutomationUpgrade6 = makeClicker("upg86", "Automation Upgrade 6");
+  var isAutomationUpgrade6Buyable = makeCheckIfAvalible("upg86", 1 /* Upgrade */);
+  var buyAutomationUpgrade7 = makeClicker("upg87", "Automation Upgrade 7");
+  var isAutomationUpgrade7Buyable = makeCheckIfAvalible("upg87", 1 /* Upgrade */);
+  var buyAutomationUpgrade8 = makeClicker("upg88", "Automation Upgrade 8");
+  var isAutomationUpgrade8Buyable = makeCheckIfAvalible("upg88", 1 /* Upgrade */);
+  var buyAutomationUpgrade9 = makeClicker("upg89", "Automation Upgrade 9");
+  var isAutomationUpgrade9Buyable = makeCheckIfAvalible("upg89", 1 /* Upgrade */);
+  var buyAutomationUpgrade10 = makeClicker("upg90", "Automation Upgrade 10");
+  var isAutomationUpgrade10Buyable = makeCheckIfAvalible("upg90", 1 /* Upgrade */);
+  var buyAutomationUpgrade11 = makeClicker("upg91", "Automation Upgrade 11");
+  var isAutomationUpgrade11Buyable = makeCheckIfAvalible("upg91", 1 /* Upgrade */);
+  var buyAutomationUpgrade12 = makeClicker("upg92", "Automation Upgrade 12");
+  var isAutomationUpgrade12Buyable = makeCheckIfAvalible("upg92", 1 /* Upgrade */);
+  var buyAutomationUpgrade13 = makeClicker("upg93", "Automation Upgrade 13");
+  var isAutomationUpgrade13Buyable = makeCheckIfAvalible("upg93", 1 /* Upgrade */);
+  var buyAutomationUpgrade14 = makeClicker("upg94", "Automation Upgrade 14");
+  var isAutomationUpgrade14Buyable = makeCheckIfAvalible("upg94", 1 /* Upgrade */);
+  var buyAutomationUpgrade15 = makeClicker("upg55", "Automation Upgrade 15");
+  var isAutomationUpgrade15Buyable = makeCheckIfAvalible("upg95", 1 /* Upgrade */);
+  var buyAutomationUpgrade16 = makeClicker("upg96", "Automation Upgrade 16");
+  var isAutomationUpgrade16Buyable = makeCheckIfAvalible("upg96", 1 /* Upgrade */);
+  var buyAutomationUpgrade17 = makeClicker("upg97", "Automation Upgrade 17");
+  var isAutomationUpgrade17Buyable = makeCheckIfAvalible("upg97", 1 /* Upgrade */);
+  var buyAutomationUpgrade18 = makeClicker("upg98", "Automation Upgrade 18");
+  var isAutomationUpgrade18Buyable = makeCheckIfAvalible("upg98", 1 /* Upgrade */);
+  var buyAutomationUpgrade19 = makeClicker("upg99", "Automation Upgrade 19");
+  var isAutomationUpgrade19Buyable = makeCheckIfAvalible("upg99", 1 /* Upgrade */);
+  var buyAutomationUpgrade20 = makeClicker("upg100", "Automation Upgrade 20");
+  var isAutomationUpgrade20Buyable = makeCheckIfAvalible("upg100", 1 /* Upgrade */);
 
   // src/buyQuants.ts
   var coinBuyQuant = {
